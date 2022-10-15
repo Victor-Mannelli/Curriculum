@@ -44,7 +44,7 @@ const StyledVerticalNavBar = styled.div`
 	display: flex;
 	flex-direction: column;
 	border-right: gray solid 1px;
-    width: 110px;
+    width: 120px;
 	height: 100%;
 
 	font-size: 24px;
@@ -55,7 +55,7 @@ const StyledVerticalNavBar = styled.div`
 		justify-content: center;
 		align-items: center;
 
-		height: 50px;
+		height: 70px;
 		width: 100%;
         padding-top: 10px;
 		color: aqua;

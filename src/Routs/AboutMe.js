@@ -10,7 +10,7 @@ export default function AboutMe() {
 					<h1> Victor Mendes Mannelli</h1>
 				</Profile>
 				<Description>
-					<h1> Who am I? </h1>
+					<h1> Who am I ? </h1>
 					<p>
 						I'm a Full Stack Developer located in Brazil. I'm passionate about
 						solving problems and eager to learn more.
@@ -52,11 +52,12 @@ const Profile = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	font-family: 'Alkalami', serif;
-
-	width: 180px;
+	
+	width: 200px;
 	height: 200px;
 	margin-bottom: 25px;
+	font-family: 'Alkalami', serif;
+	font-size: 18px;
 `;
 const Me = styled.img`
 	border-radius: 50%;
@@ -65,11 +66,12 @@ const Me = styled.img`
 const Description = styled.div`
 	width: 500px;
 	height: 300px;
-	margin: 15px 25px;
+	margin: 15px 20px 15px 40px;
 
 	h1 {
 		font-size: 50px;
-		padding-bottom: 24px;
+		font-family: 'Alkalami', serif;
+		padding: 15px 0;
 	}
 	p {
 		color: white;

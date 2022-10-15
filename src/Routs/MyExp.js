@@ -55,7 +55,7 @@ const StyledMyExp = styled.div`
 	flex-direction: row;
 
 	height: 100vh;
-	margin-left: 25px;
+	margin-left: 40px;
 	color: white;
 `;
 const SkillText = styled.div`
@@ -68,8 +68,9 @@ const SkillText = styled.div`
 	font-family: "Roboto", sans-serif;
 	h1 {
 		color: rgb(0, 255, 255);
+		font-family: 'Alkalami', serif;
 		font-size: 50px;
-		padding-bottom: 24px;
+		padding-bottom: 20px;
 	}
 	p {
 		color: white;
