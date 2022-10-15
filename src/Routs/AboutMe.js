@@ -1,38 +1,48 @@
 import styled from "styled-components";
 import me from "./Routs Files/me.png";
+import wall from "./Routs Files/wallpaper.jpg";
 export default function AboutMe() {
 	return (
-		<StyledAboutMe>
-			<Profile>
-				<Me src={me} alt="" />
-				<h1> Victor Mendes Mannelli</h1>
-			</Profile>
-			<Description>
-				<h1> The one who represents Myself </h1>
-				<p>
-					I'm a Full Stack Developer located in Brazil. I'm passionate about
-					solving problems and eager to learn more.
-				</p>
-				<p>
-					Well organised person, problem solver, independent employee with high
-					attention to detail. I love anime, video-games, music, learning new
-					languages, running and drawing.
-				</p>
-				<p>
-					Interested in the whole process of web and software development, AIs,
-					video-game development and virtual reality.
-				</p>
-				<h2> Lets develop something cool together! </h2>
-			</Description>
-		</StyledAboutMe>
+		<AboutMePage>
+			<StyledAboutMe>
+				<Profile>
+					<Me src={me} alt="" />
+					<h1> Victor Mendes Mannelli</h1>
+				</Profile>
+				<Description>
+					<h1> Who am I? </h1>
+					<p>
+						I'm a Full Stack Developer located in Brazil. I'm passionate about
+						solving problems and eager to learn more.
+					</p>
+					<p>
+						Well organised person, problem solver, independent employee with high
+						attention to detail. I love anime, video-games, music, learning new
+						languages, running and drawing.
+					</p>
+					<p>
+						Interested in the whole process of web and software development, A.I.s,
+						video-game development and virtual reality.
+					</p>
+					<h2> Let's develop something cool together! </h2>
+				</Description>
+			</StyledAboutMe>
+			<StyledImg>
+				<img src={wall} alt="" />
+			</StyledImg>
+		</AboutMePage>
 	);
 }
+const AboutMePage = styled.div `
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+`
 const StyledAboutMe = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-    align-items: center;
-	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 
 	height: 100vh;
 	color: aqua;
@@ -41,31 +51,40 @@ const StyledAboutMe = styled.div`
 const Profile = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	text-align: center;
+	font-family: 'Alkalami', serif;
 
-	width: 170px;
+	width: 180px;
 	height: 200px;
+	margin-bottom: 25px;
 `;
 const Me = styled.img`
 	border-radius: 50%;
 	margin: 20px;
 `;
 const Description = styled.div`
-	width: 600px;
+	width: 500px;
 	height: 300px;
-	margin-top: 20px;
+	margin: 15px 25px;
 
 	h1 {
-		font-size: 30px;
+		font-size: 50px;
 		padding-bottom: 24px;
 	}
 	p {
 		color: white;
-        font-size: 18px;
+        font-size: 17px;
+		line-height: 25px;
 		padding-bottom: 20px;
 	}
 	h2 {
         font-size: 20px;
 	}
 `;
+const StyledImg = styled.div `
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin-right: 30px;
+`

@@ -1,57 +1,147 @@
+import { useState } from "react";
 import styled from "styled-components";
+import wall from "./Routs Files/wallpaper.jpg";
 
 export default function Contact() {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [subject, setSubject] = useState("")
+    const [content, setContent] = useState("")
+
+    function HandleSubmit(){
+
+    }
 	return (
-		<ContactMe>
-			<h1> Contact me</h1>
-			<p>
-				I'm Interested in web, software and game development, AIs, virtual
-				reality. Currently searching for a company to work with but also open for
-				freelance opportunities. If I cross your mind don't hesitate to send me
-				a message.
-			</p>
-			<Form>
-				<NameAndEmail>
-					<input name="name" />
-					<input name="email" />
-				</NameAndEmail>
-				<input name="subject" />
-				<input name="content" />
-			</Form>
-		</ContactMe>
+        <ContactMePage>
+            <ContactMe>
+                <h1> Contact me</h1>
+                <p>
+                    I'm Interested in web, software and game development, AIs, virtual
+                    reality. Currently searching for a company to work with but also open for
+                    freelance opportunities. If I cross your mind don't hesitate to send me
+                    a message.
+                </p>
+                <Form onSubmit={HandleSubmit}>
+                    <NameAndEmail>
+                        <input 
+                            required 
+                            placeholder="Name" 
+                            name="name" 
+                            onChange={e => setName(e.target.value)}
+                            value={name}
+                        />
+                        <input 
+                            required 
+                            placeholder="Email" 
+                            type="email" 
+                            name="email" 
+                            onChange={e => setEmail(e.target.value)}
+                            value={email}
+                            />
+                    </NameAndEmail>
+                    <input 
+                        required 
+                        placeholder="Subject" 
+                        name="subject" 
+                        onChange={e => setSubject(e.target.value)}
+                        value={subject}
+                        />
+                    <textarea 
+                        required 
+                        cols="15" 
+                        placeholder="Content" 
+                        name="content" 
+                        onChange={e => setContent(e.target.value)}
+                        value={content}
+                    />
+                    <button type="submit"> Submit </button>
+                </Form>
+            </ContactMe>
+            <StyledImg>
+				<img src={wall} alt="" />
+			</StyledImg>
+        </ContactMePage>
 	);
 }
+const ContactMePage = styled.div `
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+`
 const ContactMe = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
     
-    width: 500px;
+    width: 520px;
 	height: 100vh;
+    margin-left: 50px;
     color: aqua;
     font-family: 'Roboto', sans-serif;
 
     h1 {
-        margin: 10px 0;
-        font-size: 36px;
+        margin: 10px;
+        font-size: 40px;
     }
     p {
         color: white;
         font-size: 20px;
         line-height: 25px;
-        margin-bottom: 10px;
+        margin: 0 0 15px 10px;
     }
 `
 const Form = styled.form `
     display: flex;
     flex-direction: column;
-    input {
+
+    input, textarea {
+        height: 50px;
+        width: 500px;
         margin: 10px;
+
+        background-color: rgb(42,42,42);
         border-radius: 5px;
+        padding: 15px;
+        color: lightgray;
+        font-size: 16px;
+        ::placeholder{
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: lightgray;
+        }
+    }
+    textarea {
+        border: none;
+        outline: none;
+        resize: none;
+        height: 200px;
+    }
+    button {
+        height: 50px;
+        width: 500px;
+        background-color: rgb(42,42,42);
+        border-radius: 5px;
+        color: lightgray;
+        font-size: 16px;
+        border: none;
+        margin: 10px;
+        :hover {
+            background-color: rgb(72,72,72);
+            color: white;
+        }
     }
 `
 const NameAndEmail = styled.div `
     display: flex;
     flex-direction: row;
+    input {
+        width: 240px;
+        margin-left: 10px;
+    }
+`
+const StyledImg = styled.div `
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+    margin-right: 30px;
 `

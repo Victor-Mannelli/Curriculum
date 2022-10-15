@@ -48,7 +48,8 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
     }
     a {
-        text-decoration: none;
+        text-decoration: inherit;
+        color: inherit;
     }
     input { 
         outline: none;

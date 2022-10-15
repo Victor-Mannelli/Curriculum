@@ -39,6 +39,7 @@ const StyledVerticalNavBar = styled.div`
     position: fixed;
     left: 0;
     top: 0;
+	z-index: 3;
 
 	display: flex;
 	flex-direction: column;
@@ -47,7 +48,7 @@ const StyledVerticalNavBar = styled.div`
 	height: 100%;
 
 	font-size: 24px;
-	font-family: "Calligraffitti", cursive;
+	font-family: 'Alkalami', serif;
 
 	div {
 		display: flex;
@@ -56,7 +57,7 @@ const StyledVerticalNavBar = styled.div`
 
 		height: 50px;
 		width: 100%;
-        padding-top: 5px;
+        padding-top: 10px;
 		color: aqua;
 		border-bottom: gray solid 1px;
 		cursor: pointer;
