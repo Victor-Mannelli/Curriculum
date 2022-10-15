@@ -8,17 +8,21 @@ export default function MyExp() {
 			<SkillText>
 				<h1> Skills and Experiences </h1>
 				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting
-					industry.
+					My first contact with programming was through college where I studied
+					python calculation logics.
 				</p>
 				<p>
-					Lorem Ipsum has been the industry's standard dummy text ever since the
-					1500s, when an unknown printer took a galley of type and scrambled it
-					to make a type specimen book.
+					In the beggining I couldn't see the potential and all the fun I could
+					have programming, since college can make even fun things boring...
 				</p>
 				<p>
-					It has survived not only five centuries, but also the leap into
-					electronic typesetting, remaining essentially unchanged.
+					One day I found out Driven Education and my eyes were oppened to
+					everything I could achieve and do with programming and how fast It
+					could be with their help.
+				</p>
+				<p>
+					Now I'm here trying to do something I really like for a living and I hope
+					we can make my dreams come true.
 				</p>
 				<h2>
 					Visit my&nbsp;
@@ -41,8 +45,8 @@ export default function MyExp() {
 						<p> August / 2022 - April / 2023</p>
 						<p>
 							{" "}
-							+25 projects on: HTML, CSS, Javascript, React,
-							Node.js, MongoDB, SQL, Prisma, Typescript, Docker, AWS
+							+25 projects on: HTML, CSS, Javascript, React, Node.js, MongoDB,
+							SQL, Prisma, Typescript, Docker, AWS
 						</p>
 					</div>
 				</WorkPlaces>
@@ -64,11 +68,11 @@ const SkillText = styled.div`
 	justify-content: center;
 	height: 100%;
 	width: 500px;
-    margin-right: 25px;
+	margin-right: 25px;
 	font-family: "Roboto", sans-serif;
 	h1 {
 		color: rgb(0, 255, 255);
-		font-family: 'Alkalami', serif;
+		font-family: "Alkalami", serif;
 		font-size: 50px;
 		padding-bottom: 20px;
 	}
@@ -80,11 +84,11 @@ const SkillText = styled.div`
 	}
 	h2 {
 		color: rgb(0, 255, 255);
-		font-size: 18px;
+		font-size: 18.83px;
 	}
 	a,
 	span {
-		text-decoration: underline;
+		font-weight: 700;
 		cursor: pointer;
 		:hover {
 			color: rgb(0, 210, 180);
@@ -92,7 +96,7 @@ const SkillText = styled.div`
 	}
 `;
 const Experience = styled.div`
-    display: flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	height: 100%;
@@ -101,22 +105,22 @@ const WorkPlaces = styled.div`
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-    font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif;
 	div {
-		width: 210px;
+		width: 220px;
 		height: 200px;
-		background-color: rgb(42,42,42);
-        padding: 10px;
-        h1 {
-            font-weight: 700;
-            font-size: 19px;
-            padding: 8px 0 20px 0;
-        }
-        p {
-            font-size: 16px;
-            color: lightgray;
-            padding-bottom: 15px;
-            line-height: 19px;
-        }
+		background-color: rgb(42, 42, 42);
+		padding: 10px;
+		h1 {
+			font-weight: 700;
+			font-size: 19px;
+			padding: 8px 0 15px 0;
+		}
+		p {
+			font-size: 16px;
+			color: lightgray;
+			padding-bottom: 15px;
+			line-height: 20px;
+		}
 	}
 `;

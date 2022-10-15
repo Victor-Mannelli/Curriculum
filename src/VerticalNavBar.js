@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import github from "./Files/Github.png";
-import linkedin from "./Files/LinkedIn.png";
 
 export default function VerticalNavBar() {
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 
 	return (
 		<StyledVerticalNavBar>
-			<div>
+			<div onClick={() => navigate("/")}>
 				<h1> Vm </h1>
 				<p>FullStack Developer</p>
 			</div>
@@ -16,39 +14,39 @@ export default function VerticalNavBar() {
 			<div onClick={() => navigate("/myExp")}> My Exp </div>
 			<div onClick={() => navigate("/projects")}> Projects </div>
 			<div onClick={() => navigate("/contact")}> Contact </div>
-			<div>
+			<Icons>
 				<a
 					href="https://github.com/Victor-Mannelli"
 					target="_blank"
 					rel="noreferrer"
 				>
-					<Git src={github} alt="icon" />
+					<ion-icon name="logo-github"/>
 				</a>
 				<a
 					href="https://www.linkedin.com/in/victor-mendes-mannelli-740aa2246/"
 					target="_blank"
 					rel="noreferrer"
 				>
-					<LinkedIn src={linkedin} alt="icon" />
+					<ion-icon name="logo-linkedin"/>
 				</a>
-			</div>
+			</Icons>
 		</StyledVerticalNavBar>
 	);
 }
 const StyledVerticalNavBar = styled.div`
-    position: fixed;
-    left: 0;
-    top: 0;
+	position: fixed;
+	left: 0;
+	top: 0;
 	z-index: 3;
 
 	display: flex;
 	flex-direction: column;
 	border-right: gray solid 1px;
-    width: 120px;
+	width: 120px;
 	height: 100%;
 
 	font-size: 24px;
-	font-family: 'Alkalami', serif;
+	font-family: "Alkalami", serif;
 
 	div {
 		display: flex;
@@ -57,7 +55,7 @@ const StyledVerticalNavBar = styled.div`
 
 		height: 70px;
 		width: 100%;
-        padding-top: 10px;
+		padding-top: 10px;
 		color: aqua;
 		border-bottom: gray solid 1px;
 		cursor: pointer;
@@ -68,7 +66,6 @@ const StyledVerticalNavBar = styled.div`
 			text-align: center;
 			height: 170px;
 			width: 100%;
-			cursor: initial;
 			h1 {
 				font-size: 56px;
 			}
@@ -76,18 +73,36 @@ const StyledVerticalNavBar = styled.div`
 				font-size: 22px;
 			}
 		}
-		&:nth-child(6) {
-			justify-content: space-evenly;
-			background-color: aqua;
-			cursor: initial;
+		:hover {
+			/* background-color: rgb(62, 62, 62); */
+			color: white;
 		}
 	}
 `;
-const Git = styled.img`
-	width: 30px;
-	height: 30px;
-`;
-const LinkedIn = styled.img`
-	width: 38px;
-	height: 38px;
+const Icons = styled.button`
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 70px;
+	border: none;
+	border-bottom: gray solid 1px;
+	
+	font-size: 28px;
+	background-color: rgb(29,29,29);
+	color: aqua;
+	cursor: initial;
+
+	a {
+		height: 30px;
+	}
+	
+	ion-icon {
+		cursor: pointer;
+		border-radius: 10px;
+
+		:hover {
+			color: white;
+		}
+	}
 `;

@@ -37,6 +37,7 @@ const AboutMePage = styled.div `
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	height: 100vh;
 `
 const StyledAboutMe = styled.div`
 	display: flex;
@@ -44,7 +45,6 @@ const StyledAboutMe = styled.div`
 	align-items: center;
 	justify-content: center;
 
-	height: 100vh;
 	color: aqua;
     font-family: 'Roboto', sans-serif;
 `;
