@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 import MyExp from "./MyExp";
@@ -14,4 +13,3 @@ export default function HomeScreen() {
 		</>
 	);
 }
-

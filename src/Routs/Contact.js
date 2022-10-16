@@ -81,12 +81,14 @@ const ContactMe = styled.div`
 		margin: 0 8px 10px 8px;
 		font-family: "Alkalami", serif;
 		font-size: 40px;
+		cursor: default;
 	}
 	p {
 		color: white;
 		font-size: 20px;
 		line-height: 25px;
 		margin: 0 0 15px 10px;
+		cursor: default;
 	}
 `;
 const Form = styled.form`

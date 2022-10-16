@@ -21,8 +21,8 @@ export default function MyExp() {
 					could be with their help.
 				</p>
 				<p>
-					Now I'm here trying to do something I really like for a living and I hope
-					we can make my dreams come true.
+					Now I'm here trying to do something I really like for a living and I
+					hope we can make my dreams come true.
 				</p>
 				<h2>
 					Visit my&nbsp;
@@ -38,7 +38,6 @@ export default function MyExp() {
 				</h2>
 			</SkillText>
 			<Experience>
-				<></>
 				<WorkPlaces>
 					<div>
 						<h1>Driven</h1>
@@ -47,6 +46,30 @@ export default function MyExp() {
 							{" "}
 							+25 projects on: HTML, CSS, Javascript, React, Node.js, MongoDB,
 							SQL, Prisma, Typescript, Docker, AWS
+						</p>
+					</div>
+					<div>
+						<h1>N/A</h1>
+						<p> month / year - month / year</p>
+						<p>
+							Description Description Description Description Description
+							Description Description Description Description Description
+						</p>
+					</div>
+					<div>
+						<h1>N/A</h1>
+						<p> month / year - month / year</p>
+						<p> 
+							Description Description Description Description Description
+							Description Description Description Description Description
+						</p>
+					</div>
+					<div>
+						<h1>N/A</h1>
+						<p> month / year - month / year</p>
+						<p> 
+							Description Description Description Description Description
+							Description Description Description Description Description
 						</p>
 					</div>
 				</WorkPlaces>
@@ -61,9 +84,11 @@ const StyledMyExp = styled.div`
 	height: 100vh;
 	margin-left: 40px;
 	color: white;
+	cursor: default;
 `;
 const SkillText = styled.div`
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	justify-content: center;
 	height: 100%;
@@ -97,6 +122,7 @@ const SkillText = styled.div`
 `;
 const Experience = styled.div`
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	justify-content: center;
 	height: 100%;
@@ -111,6 +137,7 @@ const WorkPlaces = styled.div`
 		height: 200px;
 		background-color: rgb(42, 42, 42);
 		padding: 10px;
+		margin: 10px;
 		h1 {
 			font-weight: 700;
 			font-size: 19px;

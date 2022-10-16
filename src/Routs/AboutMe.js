@@ -38,6 +38,7 @@ const AboutMePage = styled.div `
 	flex-direction: row;
 	justify-content: space-between;
 	height: 100vh;
+	cursor: default;
 `
 const StyledAboutMe = styled.div`
 	display: flex;

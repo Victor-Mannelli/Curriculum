@@ -36,15 +36,17 @@ const ProjectsPage = styled.div `
 const StyledHeader = styled.div`
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 100px;
 	width: 100%;
-	border-bottom: 1px solid gray;
-	padding: 15px 0 0 25px;
+	padding-top: 27px;
+	cursor: default;
 
 	h1 {
 		color: rgb(0, 255, 255);
 		font-family: 'Alkalami', serif;
 		font-size: 50px;
+		padding-top: 15px;
 	}
 `;
 const StyledProject = styled.div`
