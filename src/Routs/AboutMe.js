@@ -16,13 +16,13 @@ export default function AboutMe() {
 						solving problems and eager to learn more.
 					</p>
 					<p>
-						Well organised person, problem solver, independent employee with high
-						attention to detail. I love anime, video-games, music, learning new
-						languages, running and drawing.
+						Well organised person, problem solver, independent employee with
+						high attention to detail. I love anime, video-games, music, learning
+						new languages, running and drawing.
 					</p>
 					<p>
-						Interested in the whole process of web and software development, A.I.s,
-						video-game development and virtual reality.
+						Interested in the whole process of web and software development,
+						A.I.s, video-game development and virtual reality.
 					</p>
 					<h2> Let's develop something cool together! </h2>
 				</Description>
@@ -33,36 +33,48 @@ export default function AboutMe() {
 		</AboutMePage>
 	);
 }
-const AboutMePage = styled.div `
+const AboutMePage = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
+	align-items: center;
+
 	height: 100vh;
+	width: 100%;
+	padding: 70px 0 25px 0;
+	background-color: #2a2a2a;
 	cursor: default;
-`
+
+	@media (max-width: 1000px) {
+		height: 100%;
+		flex-direction: column;
+	}
+`;
 const StyledAboutMe = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 
 	color: aqua;
-    font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 `;
 const Profile = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	
+	align-items: center;
+	justify-content: center;
+
 	width: 200px;
 	height: 200px;
-	margin-bottom: 25px;
-	font-family: 'Alkalami', serif;
+	font-family: "Alkalami", serif;
 	font-size: 18px;
 `;
 const Me = styled.img`
+	width: 150px;
+	height: 150px;
 	border-radius: 50%;
-	margin: 20px;
+	margin-bottom: 20px;
 `;
 const Description = styled.div`
 	width: 500px;
@@ -71,23 +83,21 @@ const Description = styled.div`
 
 	h1 {
 		font-size: 50px;
-		font-family: 'Alkalami', serif;
+		font-family: "Alkalami", serif;
 		padding: 15px 0;
 	}
 	p {
 		color: white;
-        font-size: 17px;
+		font-size: 17px;
 		line-height: 25px;
 		padding-bottom: 20px;
 	}
 	h2 {
-        font-size: 20px;
+		font-size: 20px;
 	}
 `;
-const StyledImg = styled.div `
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+const StyledImg = styled.div`
 	margin-right: 30px;
-`
+	max-width: 1280px;
+	max-height: 720px;
+`;

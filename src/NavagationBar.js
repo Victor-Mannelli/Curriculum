@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-export default function VerticalNavBar() {
+export default function NavagationBar() {
 	const navigate = useNavigate();
 
 	return (
-		<StyledVerticalNavBar>
+		<StyledNavagationBar>
 			<div onClick={() => navigate("/")}>
 				<h1> Vm </h1>
 				<p>FullStack Developer</p>
 			</div>
-			<div onClick={() => navigate("/aboutMe")}> About me </div>
-			<div onClick={() => navigate("/myExp")}> My Exp </div>
+			<div onClick={() => navigate("/about-me")}> About me </div>
+			<div onClick={() => navigate("/my-exp")}> My Exp </div>
 			<div onClick={() => navigate("/projects")}> Projects </div>
 			<div onClick={() => navigate("/contact")}> Contact </div>
 			<Icons>
@@ -30,44 +30,46 @@ export default function VerticalNavBar() {
 					<ion-icon name="logo-linkedin"/>
 				</a>
 			</Icons>
-		</StyledVerticalNavBar>
+		</StyledNavagationBar>
 	);
 }
-const StyledVerticalNavBar = styled.div`
+const StyledNavagationBar = styled.div`
 	position: fixed;
 	left: 0;
 	top: 0;
 	z-index: 3;
+	padding-bottom: 70px;
 
 	display: flex;
-	flex-direction: column;
-	border-right: gray solid 1px;
-	width: 120px;
-	height: 100%;
-
+	border-bottom: gray solid 1px;
+	width: 100%;
+	height: 70px;
+	
 	font-size: 24px;
 	font-family: "Alkalami", serif;
+	background-color: #1d1d1d;
 
 	div {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 
 		height: 70px;
 		width: 100%;
 		padding-top: 10px;
 		color: aqua;
-		border-bottom: gray solid 1px;
+		border-right: gray solid 1px;
 		cursor: pointer;
 
 		&:nth-child(1) {
-			flex-direction: column;
 			justify-content: space-evenly;
 			text-align: center;
-			height: 170px;
-			width: 100%;
+			padding: 10px 20px 0 20px;
+			
 			h1 {
 				font-size: 56px;
+				padding: 10px 15px 0 0;
 			}
 			p {
 				font-size: 22px;
@@ -86,7 +88,6 @@ const Icons = styled.button`
 	width: 100%;
 	height: 70px;
 	border: none;
-	border-bottom: gray solid 1px;
 	
 	font-size: 28px;
 	background-color: rgb(29,29,29);

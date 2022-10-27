@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export default function MyExp() {
 	const navigate = useNavigate();
+	const { pathname } = useLocation()
+ 
 	return (
-		<StyledMyExp>
+		<StyledMyExp pathname={pathname}>
 			<SkillText>
 				<h1> Skills and Experiences </h1>
 				<p>
@@ -80,18 +82,24 @@ export default function MyExp() {
 const StyledMyExp = styled.div`
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 
 	height: 100vh;
 	margin-left: 40px;
+	padding-top: ${props => props.pathname === "/my-exp" ? "70px" : "0"};
 	color: white;
 	cursor: default;
+
+	@media (max-width: 1050px){
+		padding-top: ${props => props.pathname === "/my-exp" ? "100px" : "0"};
+		flex-direction: column;
+		height: 100%;
+	}
 `;
 const SkillText = styled.div`
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	justify-content: center;
-	height: 100%;
 	width: 500px;
 	margin-right: 25px;
 	font-family: "Roboto", sans-serif;
@@ -124,8 +132,11 @@ const Experience = styled.div`
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	justify-content: center;
-	height: 100%;
+	width: 500px;
+	height: 500px;
+	@media (max-width: 1050px){
+		padding: 30px 0;
+	}
 `;
 const WorkPlaces = styled.div`
 	display: flex;

@@ -1,9 +1,11 @@
 import ProjectLinks from "../ProjectsLinks";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 
 export default function Projects() {
+	const { pathname } = useLocation()
 	return (
-		<ProjectsPage>
+		<ProjectsPage pathname={pathname}>
 			<StyledHeader>
 				<h1> My GitHub Projects </h1>
 			</StyledHeader>
@@ -31,7 +33,10 @@ function Project({ projectLinks, projectName, ProjectImage }) {
 	)
 }
 const ProjectsPage = styled.div `
-	padding: 0 0 35px 10px;
+	padding: 0px 0 30px 0;
+	padding-top: ${props => props.pathname === "/projects" ? "70px" : "45px"};
+	background-color: #2a2a2a;
+	height: 100%;
 `
 const StyledHeader = styled.div`
 	display: flex;
@@ -66,6 +71,7 @@ const StyledProject = styled.div`
 
 		font-family: "Roboto", sans-serif;
 		color: #ffffff;
+		cursor: pointer;
 	}
 `;
 const ProjectsDiv = styled.div`

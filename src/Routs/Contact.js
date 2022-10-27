@@ -1,16 +1,44 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import wall from "./Routs Files/wallpaper.jpg";
+import { toast } from "react-toastify";
 
 export default function Contact() {
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
-	const [subject, setSubject] = useState("");
-	const [content, setContent] = useState("");
+	const form = useRef();
+	const { pathname } = useLocation();
+	const [fetchData, setFetchData] = useState({
+		name: "",
+		email: "",
+		subject: "",
+		content: "",
+	});
 
-	function HandleSubmit() {}
+	function HandleStateChange(e) {
+		e.preventDefault();
+
+		setFetchData({
+			...fetchData,
+			[e.target.name]: e.target.value,
+		});
+
+		emailjs
+			.sendForm(
+				"service_m8zqveq",
+				"template_utz4ju7",
+				form.current,
+				"TuD9oztmKohwfiEZi"
+			)
+			.then(() =>
+				toast.success("message sent", {
+					position: "top-center",
+					theme: "dark",
+				})
+			);
+	}
 	return (
-		<ContactMePage>
+		<ContactMePage pathname={pathname}>
 			<ContactMe>
 				<h1> Contact me</h1>
 				<p>
@@ -19,41 +47,52 @@ export default function Contact() {
 					for freelance opportunities.
 				</p>
 				<p>If I cross your mind don't hesitate to send me a message.</p>
-				<Form onSubmit={HandleSubmit}>
+				<StyledForm ref={form} onSubmit={HandleStateChange}>
 					<NameAndEmail>
 						<input
 							required
 							placeholder="Name"
+							type="text"
 							name="name"
-							onChange={(e) => setName(e.target.value)}
-							value={name}
+							onChange={(e) =>
+								setFetchData({ ...fetchData, name: e.target.value })
+							}
+							value={fetchData.name}
 						/>
 						<input
 							required
 							placeholder="Email"
 							type="email"
 							name="email"
-							onChange={(e) => setEmail(e.target.value)}
-							value={email}
+							onChange={(e) =>
+								setFetchData({ ...fetchData, email: e.target.value })
+							}
+							value={fetchData.email}
 						/>
 					</NameAndEmail>
 					<input
 						required
 						placeholder="Subject"
+						type="text"
 						name="subject"
-						onChange={(e) => setSubject(e.target.value)}
-						value={subject}
+						onChange={(e) =>
+							setFetchData({ ...fetchData, subject: e.target.value })
+						}
+						value={fetchData.subject}
 					/>
 					<textarea
 						required
 						cols="15"
 						placeholder="Content"
+						type="text"
 						name="content"
-						onChange={(e) => setContent(e.target.value)}
-						value={content}
+						onChange={(e) =>
+							setFetchData({ ...fetchData, content: e.target.value })
+						}
+						value={fetchData.content}
 					/>
 					<button type="submit"> Submit </button>
-				</Form>
+				</StyledForm>
 			</ContactMe>
 			<StyledImg>
 				<img src={wall} alt="" />
@@ -64,16 +103,21 @@ export default function Contact() {
 const ContactMePage = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-	margin-left: 40px;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100vh;
+	padding-top: ${(props) => (props.pathname === "/contact" ? "70px" : "70px")};
+
+	@media (max-width: 1200px) {
+		flex-direction: column;
+		height: 100%;
+		padding: 110px 0 30px 0;
+	}
 `;
 const ContactMe = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-
 	width: 520px;
-	height: 100vh;
 	color: aqua;
 	font-family: "Roboto", sans-serif;
 
@@ -91,7 +135,7 @@ const ContactMe = styled.div`
 		cursor: default;
 	}
 `;
-const Form = styled.form`
+const StyledForm = styled.form`
 	display: flex;
 	flex-direction: column;
 
@@ -99,7 +143,7 @@ const Form = styled.form`
 	textarea {
 		height: 50px;
 		width: 500px;
-		margin: 10px;
+		margin: 5px;
 
 		background-color: rgb(42, 42, 42);
 		border-radius: 5px;
@@ -113,10 +157,11 @@ const Form = styled.form`
 		}
 	}
 	textarea {
+		font-family: "Roboto", sans-serif;
 		border: none;
 		outline: none;
 		resize: none;
-		height: 200px;
+		height: 150px;
 	}
 	button {
 		height: 50px;
@@ -126,7 +171,7 @@ const Form = styled.form`
 		color: lightgray;
 		font-size: 16px;
 		border: none;
-		margin: 10px;
+		margin: 5px;
 		:hover {
 			background-color: rgb(72, 72, 72);
 			color: white;
@@ -137,14 +182,15 @@ const NameAndEmail = styled.div`
 	display: flex;
 	flex-direction: row;
 	input {
-		width: 240px;
-		margin-left: 10px;
+		width: 245px;
+		margin-left: 5px;
 	}
 `;
 const StyledImg = styled.div`
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin-right: 30px;
+
+	@media (max-width: 1200px) {
+		padding-top: 40px;
+	}
 `;
