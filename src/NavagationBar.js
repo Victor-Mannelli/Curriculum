@@ -69,14 +69,12 @@ const StyledNavagationBar = styled.div`
 			padding: 10px 20px 0 20px;
 			
 			img {
-				width: 60px;
-				height: 80px;
+				width: 80px;
+				height: 90px;
 				padding-bottom: 10px;
 			}
-		
 			p {
 				font-size: 22px;
-				padding-left: 10px;
 			}
 		}
 		:hover {

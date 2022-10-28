@@ -124,12 +124,12 @@ const ContactMe = styled.div`
 	h1 {
 		margin: 0 8px 10px 8px;
 		font-family: "Alkalami", serif;
-		font-size: 40px;
+		font-size: 2.5rem;
 		cursor: default;
 	}
 	p {
 		color: white;
-		font-size: 20px;
+		font-size: 1.25rem;
 		line-height: 25px;
 		margin: 0 0 15px 10px;
 		cursor: default;

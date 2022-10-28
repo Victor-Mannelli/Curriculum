@@ -1,10 +1,20 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import WorkPlaceArray from "../WorkPlacesArray";
 
 export default function MyExp() {
 	const navigate = useNavigate();
-	const { pathname } = useLocation()
- 
+	const { pathname } = useLocation();
+	
+	function WorkPlace({title, date, description}) {
+		return (
+			<div>
+				<h1> {title} </h1>
+				<p> {date} </p>
+				<p> {description} </p>
+			</div>
+		);
+	}
 	return (
 		<StyledMyExp pathname={pathname}>
 			<SkillText>
@@ -41,39 +51,7 @@ export default function MyExp() {
 			</SkillText>
 			<Experience>
 				<WorkPlaces>
-					<div>
-						<h1>Driven</h1>
-						<p> August / 2022 - April / 2023</p>
-						<p>
-							{" "}
-							+25 projects on: HTML, CSS, Javascript, React, Node.js, MongoDB,
-							SQL, Prisma, Typescript, Docker, AWS
-						</p>
-					</div>
-					<div>
-						<h1>N/A</h1>
-						<p> month / year - month / year</p>
-						<p>
-							Description Description Description Description Description
-							Description Description Description Description Description
-						</p>
-					</div>
-					<div>
-						<h1>N/A</h1>
-						<p> month / year - month / year</p>
-						<p> 
-							Description Description Description Description Description
-							Description Description Description Description Description
-						</p>
-					</div>
-					<div>
-						<h1>N/A</h1>
-						<p> month / year - month / year</p>
-						<p> 
-							Description Description Description Description Description
-							Description Description Description Description Description
-						</p>
-					</div>
+					{WorkPlaceArray.map(e => <WorkPlace title={e.title} date={e.date} description={e.description} />)}
 				</WorkPlaces>
 			</Experience>
 		</StyledMyExp>
@@ -83,15 +61,16 @@ const StyledMyExp = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-around;
 
 	height: 100vh;
 	margin-left: 40px;
-	padding-top: ${props => props.pathname === "/my-exp" ? "70px" : "0"};
+	padding-top: ${(props) => (props.pathname === "/my-exp" ? "70px" : "0")};
 	color: white;
 	cursor: default;
 
-	@media (max-width: 1050px){
-		padding-top: ${props => props.pathname === "/my-exp" ? "100px" : "0"};
+	@media (max-width: 1050px) {
+		padding-top: ${(props) => (props.pathname === "/my-exp" ? "100px" : "0")};
 		flex-direction: column;
 		height: 100%;
 	}
@@ -132,9 +111,8 @@ const Experience = styled.div`
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	width: 500px;
-	height: 500px;
-	@media (max-width: 1050px){
+	justify-content: center;
+	@media (max-width: 1050px) {
 		padding: 30px 0;
 	}
 `;
@@ -143,6 +121,7 @@ const WorkPlaces = styled.div`
 	flex-direction: row;
 	flex-wrap: wrap;
 	font-family: "Roboto", sans-serif;
+
 	div {
 		width: 220px;
 		height: 200px;
