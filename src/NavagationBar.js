@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import logo from "./Files/logo.png"
 
 export default function NavagationBar() {
 	const navigate = useNavigate();
@@ -7,7 +8,7 @@ export default function NavagationBar() {
 	return (
 		<StyledNavagationBar>
 			<div onClick={() => navigate("/")}>
-				<h1> Vm </h1>
+				<img src={logo} alt="logo"/>
 				<p>FullStack Developer</p>
 			</div>
 			<div onClick={() => navigate("/about-me")}> About me </div>
@@ -67,12 +68,15 @@ const StyledNavagationBar = styled.div`
 			text-align: center;
 			padding: 10px 20px 0 20px;
 			
-			h1 {
-				font-size: 56px;
-				padding: 10px 15px 0 0;
+			img {
+				width: 60px;
+				height: 80px;
+				padding-bottom: 10px;
 			}
+		
 			p {
 				font-size: 22px;
+				padding-left: 10px;
 			}
 		}
 		:hover {
