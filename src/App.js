@@ -9,11 +9,15 @@ import Projects from "./Routs/Projects";
 import Contact from "./Routs/Contact";
 import NavagationBar from "./NavagationBar";
 import { ToastContainer } from "react-toastify";
+import PopUpMenu from "./PopUpMenu";
+import { useState } from "react";
 
 export default function App() {
+	const [popUp, setPopUp] = useState(false)
 	return (
 		<BrowserRouter>
 			<NavagationBar />
+			<PopUpMenu popUp={popUp} setPopUp={setPopUp}/>
 			<Main>
 				<Routes>
 					<Route path="/" element={<HomeScreen />} />
@@ -22,9 +26,9 @@ export default function App() {
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/projects" element={<Projects />} />
 				</Routes>
-				<GlobalStyle/>
-        <ToastContainer />
 			</Main>
+			<GlobalStyle />
+			<ToastContainer />
 		</BrowserRouter>
 	);
 }

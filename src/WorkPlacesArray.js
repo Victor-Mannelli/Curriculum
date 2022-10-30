@@ -1,4 +1,3 @@
-const e = " "
 const WorkPlaceArray = [
 	{
 		title: "Driven",

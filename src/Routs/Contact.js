@@ -14,7 +14,6 @@ export default function Contact() {
 		subject: "",
 		content: "",
 	});
-
 	function HandleStateChange(e) {
 		e.preventDefault();
 
@@ -22,7 +21,6 @@ export default function Contact() {
 			...fetchData,
 			[e.target.name]: e.target.value,
 		});
-
 		emailjs
 			.sendForm(
 				"service_m8zqveq",
@@ -184,6 +182,7 @@ const NameAndEmail = styled.div`
 	input {
 		width: 245px;
 		margin-left: 5px;
+		
 	}
 `;
 const StyledImg = styled.div`

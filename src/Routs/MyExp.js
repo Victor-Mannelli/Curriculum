@@ -51,7 +51,7 @@ export default function MyExp() {
 			</SkillText>
 			<Experience>
 				<WorkPlaces>
-					{WorkPlaceArray.map(e => <WorkPlace title={e.title} date={e.date} description={e.description} />)}
+					{WorkPlaceArray.map((e,i) => <WorkPlace key={i} title={e.title} date={e.date} description={e.description} />)}
 				</WorkPlaces>
 			</Experience>
 		</StyledMyExp>

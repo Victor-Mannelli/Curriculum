@@ -78,9 +78,13 @@ const StyledNavagationBar = styled.div`
 			}
 		}
 		:hover {
-			/* background-color: rgb(62, 62, 62); */
+			background-color: rgb(62, 62, 62);
 			color: white;
 		}
+	}
+	@media (max-width: 1000px){
+		display: none;
+		/* padding-bottom: 0; */
 	}
 `;
 const Icons = styled.button`
