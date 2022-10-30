@@ -109,12 +109,10 @@ const ContactMePage = styled.div`
 	@media (max-width: 1000px){
 		padding-top: 40px;
 		grid-template-columns: 100%;
-		grid-template-rows: 60% 40%;
 	}
 	@media (max-width: 360px){
 		padding-top: 0px;
 		grid-template-columns: 100%;
-		grid-template-rows: 100%;
 	}
 `;
 const ContactMe = styled.div`
@@ -126,7 +124,7 @@ const ContactMe = styled.div`
 	font-family: "Roboto", sans-serif;
 
 	h1 {
-		margin: 0 8px 10px 8px;
+		margin-bottom: 10px;
 		font-family: "Alkalami", serif;
 		font-size: 2.5rem;
 		cursor: default;
@@ -135,8 +133,14 @@ const ContactMe = styled.div`
 		color: white;
 		font-size: 1.25rem;
 		line-height: 25px;
-		margin: 0 0 15px 10px;
+		margin-bottom: 15px;
 		cursor: default;
+	}
+	@media (max-width: 1000px){
+		width: 80%;
+	}
+	@media (max-width: 360px){
+		width: 90%;
 	}
 `;
 const StyledForm = styled.form`
@@ -146,7 +150,7 @@ const StyledForm = styled.form`
 	textarea {
 		height: 50px;
 		width: 100%;
-		margin: 5px;
+		margin: 5px 0;
 
 		background-color: rgb(42, 42, 42);
 		border-radius: 5px;
@@ -174,7 +178,7 @@ const StyledForm = styled.form`
 		color: lightgray;
 		font-size: 16px;
 		border: none;
-		margin: 5px;
+		margin: 5px 0;
 		:hover {
 			background-color: rgb(72, 72, 72);
 			color: white;

@@ -5,8 +5,8 @@ import WorkPlaceArray from "../WorkPlacesArray";
 export default function MyExp() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
-	
-	function WorkPlace({title, date, description}) {
+
+	function WorkPlace({ title, date, description }) {
 		return (
 			<div>
 				<h1> {title} </h1>
@@ -49,37 +49,41 @@ export default function MyExp() {
 					<span onClick={() => navigate("/contact")}>contact me</span>.
 				</h2>
 			</SkillText>
-			<Experience>
-				<WorkPlaces>
-					{WorkPlaceArray.map((e,i) => <WorkPlace key={i} title={e.title} date={e.date} description={e.description} />)}
-				</WorkPlaces>
-			</Experience>
+			<Experiences>
+				{WorkPlaceArray.map((e, i) => (
+					<WorkPlace
+						key={i}
+						title={e.title}
+						date={e.date}
+						description={e.description}
+					/>
+				))}
+			</Experiences>
 		</StyledMyExp>
 	);
 }
 const StyledMyExp = styled.div`
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-around;
+	display: grid;
+	grid-template-columns: 55% 45%;
 
-	height: 100vh;
-	margin-left: 40px;
-	padding-top: ${(props) => (props.pathname === "/my-exp" ? "70px" : "0")};
+	min-height: 100vh;
+	padding-top: 70px;
+
+	min-height: 100vh;
 	color: white;
 	cursor: default;
 
-	@media (max-width: 1050px) {
-		padding-top: ${(props) => (props.pathname === "/my-exp" ? "100px" : "0")};
-		flex-direction: column;
-		height: 100%;
+	@media (max-width: 1000px) {
+		grid-template-columns: 100%;
 	}
 `;
 const SkillText = styled.div`
+	align-self: center;
+	justify-self: center;
+
 	display: flex;
-	flex: 1;
 	flex-direction: column;
-	width: 500px;
+	width: 80%;
 	margin-right: 25px;
 	font-family: "Roboto", sans-serif;
 	h1 {
@@ -107,20 +111,15 @@ const SkillText = styled.div`
 		}
 	}
 `;
-const Experience = styled.div`
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	justify-content: center;
-	@media (max-width: 1050px) {
-		padding: 30px 0;
-	}
-`;
-const WorkPlaces = styled.div`
+const Experiences = styled.div`
+	align-self: center;
+	justify-self: center;
+
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	font-family: "Roboto", sans-serif;
+	justify-content: center;
 
 	div {
 		width: 220px;
