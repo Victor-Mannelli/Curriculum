@@ -34,27 +34,32 @@ export default function AboutMe() {
 	);
 }
 const AboutMePage = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
+	min-height: 100vh;
 
-	height: 100vh;
-	width: 100%;
-	padding: 70px 0 25px 0;
+	display: grid;
+	grid-template-columns: 50% 50%;
+
+	padding-top: 70px;
 	background-color: #2a2a2a;
 	cursor: default;
 
 	@media (max-width: 1000px) {
-		height: 100%;
-		flex-direction: column;
+		padding-top: 40px;
+		grid-template-columns: 100%;
+	}
+	@media (max-width: 360px){
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
 	}
 `;
 const StyledAboutMe = styled.div`
+	justify-self: center;
+	align-self: center;
+
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	color: aqua;
 	font-family: "Roboto", sans-serif;
 `;
@@ -77,10 +82,9 @@ const Me = styled.img`
 	margin-bottom: 20px;
 `;
 const Description = styled.div`
-	width: 500px;
-	height: 300px;
+	width: 100%;
+	height: 100%;
 	margin: 15px 20px 15px 40px;
-
 	h1 {
 		font-size: 50px;
 		font-family: "Alkalami", serif;
@@ -95,9 +99,27 @@ const Description = styled.div`
 	h2 {
 		font-size: 20px;
 	}
+	@media (max-width: 1000px) {
+		width: 80%;
+	}
+	@media (max-width: 360px){
+		width: 93%;
+	}
 `;
 const StyledImg = styled.div`
-	margin-right: 30px;
-	max-width: 1280px;
-	max-height: 720px;
+	justify-self: center;
+	align-self: center;
+	width: 80%;
+	height: 50%;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	@media (max-width: 1000px) {
+		height: 100%;
+		padding: 10px 0 10px 0;
+	}
+	@media (max-width: 360px) {
+		display: none;
+	}
 `;
