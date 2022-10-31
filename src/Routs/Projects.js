@@ -33,10 +33,13 @@ function Project({ projectLinks, projectName, ProjectImage }) {
 	)
 }
 const ProjectsPage = styled.div `
-	padding: 0px 0 30px 0;
+	padding: 0 0 30px 0;
 	padding-top: ${props => props.pathname === "/projects" ? "70px" : "45px"};
 	background-color: #2a2a2a;
-	height: 100%;
+	min-height: 100vh;
+	@media(max-width: 1000px){
+		padding: 30px 0 30px 0;
+	}
 `
 const StyledHeader = styled.div`
 	display: flex;
@@ -52,6 +55,9 @@ const StyledHeader = styled.div`
 		font-family: 'Alkalami', serif;
 		font-size: 50px;
 		padding-top: 15px;
+	}
+	@media(max-width: 360px) {
+		padding: 0 0 0 20px;
 	}
 `;
 const StyledProject = styled.div`

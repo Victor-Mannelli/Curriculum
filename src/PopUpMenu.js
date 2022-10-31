@@ -90,17 +90,20 @@ const MenuIconClose = styled(IoClose)`
 	position: fixed;
 	top: 15px;
 	right: 15px;
-	color: white;
+
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
-
+	color: white;
+	
 	:hover {
 		color: lightgray;
 	}
 `;
 const MenuIconOpen = styled(TfiMenu)`
 	position: fixed;
+	display: none;
+	z-index: 5;
 	top: 20px;
 	right: 20px;
 	color: white;
@@ -109,6 +112,9 @@ const MenuIconOpen = styled(TfiMenu)`
 	cursor: pointer;
 	:hover {
 		color: lightgray;
+	}
+	@media (max-width: 1000px) {
+		display: initial;
 	}
 `;
 const PopUpScreen = styled.div`
@@ -200,6 +206,9 @@ const Content = styled.div`
 		left: calc(100% + 100px);
 		transition: 0.5s;
 		transition-delay: 0.2s;
+	}
+	@media (max-width: 1000px) {
+		padding-top: 70px;
 	}
 `;
 const Logo = styled.img`
