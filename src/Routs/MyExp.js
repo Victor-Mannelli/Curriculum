@@ -67,7 +67,7 @@ const StyledMyExp = styled.div`
 	grid-template-columns: 55% 45%;
 
 	min-height: 100vh;
-	padding-top: 70px;
+	padding-top: 80px;
 
 	min-height: 100vh;
 	color: white;

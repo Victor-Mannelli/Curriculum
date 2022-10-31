@@ -104,7 +104,7 @@ const ContactMePage = styled.div`
 	align-items: center;
 	justify-content: space-around;
 	min-height: 100vh;
-	padding-top: 70px;
+	padding-top: 80px;
 
 	@media (max-width: 1000px){
 		padding-top: 40px;
