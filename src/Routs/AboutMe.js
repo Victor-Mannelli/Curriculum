@@ -95,11 +95,13 @@ const Description = styled.div`
 		font-size: 17px;
 		line-height: 25px;
 		padding-bottom: 20px;
+		text-align: justify;
 	}
 	h2 {
 		font-size: 20px;
 	}
 	@media (max-width: 1000px) {
+		padding-right: 15px;
 		width: 80%;
 	}
 	@media (max-width: 360px){

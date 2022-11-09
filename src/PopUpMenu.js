@@ -88,9 +88,8 @@ export default function PopUpMenu({ popUp, setPopUp }) {
 }
 const MenuIconClose = styled(IoClose)`
 	position: fixed;
-	top: 15px;
-	right: 15px;
-
+	top: 10px;
+	right: 7px;
 	width: 40px;
 	height: 40px;
 	cursor: pointer;
@@ -102,13 +101,13 @@ const MenuIconClose = styled(IoClose)`
 `;
 const MenuIconOpen = styled(TfiMenu)`
 	position: fixed;
-	display: none;
 	z-index: 5;
-	top: 20px;
-	right: 20px;
-	color: white;
+	top: 15px;
+	right: 15px;
+	display: none;
 	width: 30px;
 	height: 30px;
+	color: white;
 	cursor: pointer;
 	:hover {
 		color: lightgray;

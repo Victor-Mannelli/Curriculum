@@ -71,6 +71,7 @@ const StyledMyExp = styled.div`
 
 	min-height: 100vh;
 	color: white;
+	background: #1d1d1d;
 	cursor: default;
 
 	@media (max-width: 1000px) {
@@ -97,6 +98,7 @@ const SkillText = styled.div`
 		font-size: 18px;
 		line-height: 25px;
 		padding-bottom: 20px;
+		text-align: justify;
 	}
 	h2 {
 		color: rgb(0, 255, 255);

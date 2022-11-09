@@ -105,7 +105,7 @@ const ContactMePage = styled.div`
 	justify-content: space-around;
 	min-height: 100vh;
 	padding-top: 80px;
-
+	background: #1d1d1d;
 	@media (max-width: 1000px){
 		padding-top: 40px;
 		grid-template-columns: 100%;
@@ -135,6 +135,7 @@ const ContactMe = styled.div`
 		line-height: 25px;
 		margin-bottom: 15px;
 		cursor: default;
+		text-align: justify;
 	}
 	@media (max-width: 1000px){
 		width: 80%;
