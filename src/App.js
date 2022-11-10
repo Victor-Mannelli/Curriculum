@@ -17,13 +17,26 @@ import backgroundMusic from "./Files/background-music.mp3";
 export default function App() {
 	const [popUp, setPopUp] = useState(false);
 	const [musicState, setMusicState] = useState(false);
+	const [musicVolume, setMusicVolume] = useState(20);
+	const [showVolume, setShowVolume] = useState(false);
+	const [showMusic, setShowMusic] = useState(false);
 
 	useEffect(() => {
 		playAudio();
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [musicState]);
+	useEffect(() => {
+		document.getElementById("music-player").volume = musicVolume / 100;
 
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [musicVolume]);
+
+	function handleClick() {
+		if (showMusic === true) return
+		setShowMusic(true);
+		setMusicState(true);
+	}
 	function playAudio() {
 		if (musicState) {
 			document.getElementById("music-player").play();
@@ -34,58 +47,76 @@ export default function App() {
 
 	return (
 		<BrowserRouter>
-			<NavagationBar />
-			<PopUpMenu popUp={popUp} setPopUp={setPopUp} />
-			<MusicPlayer id="music-player" loop>
-				<source src={backgroundMusic} type="audio/mp3" />
-				Your browser does not support the audio tag.
-			</MusicPlayer>
-			<StopMusicIcon
-				style={{ display: musicState ? "initial" : "none" }}
-				onClick={() => setMusicState(!musicState)}
-			/>
-			<UnmuteIcon
-				style={{ display: musicState ? "none" : "initial" }}
-				onClick={() => setMusicState(!musicState)}
-			/>
-			<Routes>
-				<Route path="/" element={<HomeScreen />} />
-				<Route path="/about-me" element={<AboutMe />} />
-				<Route path="/my-exp" element={<MyExp />} />
-				<Route path="/contact" element={<Contact />} />
-				<Route path="/projects" element={<Projects />} />
-			</Routes>
-			<GlobalStyle />
-			<ToastContainer />
+			<div onClick={() => handleClick()}>
+				<NavagationBar />
+				<PopUpMenu popUp={popUp} setPopUp={setPopUp} />
+				<MusicBox onMouseLeave={() => setShowVolume(false)}>
+					<audio id="music-player" loop>
+						<source src={backgroundMusic} type="audio/mp3" />
+						Your browser does not support the audio tag.
+					</audio>
+					<StopMusicIcon
+						style={{ display: musicState ? "initial" : "none" }}
+						onClick={() => setMusicState(!musicState)}
+						onMouseOver={() => setShowVolume(true)}
+					/>
+					<UnmuteIcon
+						style={{ display: musicState ? "none" : "initial" }}
+						onClick={() => setMusicState(!musicState)}
+						onMouseOver={() => setShowVolume(true)}
+					/>
+					<VolumeInput
+						onChange={(e) => setMusicVolume(e.target.value)}
+						value={musicVolume}
+						type="range"
+						min="0"
+						max="100"
+						showVolume={showVolume}
+					/>
+				</MusicBox>
+				<Routes>
+					<Route path="/" element={<HomeScreen />} />
+					<Route path="/about-me" element={<AboutMe />} />
+					<Route path="/my-exp" element={<MyExp />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/projects" element={<Projects />} />
+				</Routes>
+				<GlobalStyle />
+				<ToastContainer />
+			</div>
 		</BrowserRouter>
 	);
 }
-const MusicPlayer = styled.audio`
-	margin-top: 70px;
+const MusicBox = styled.div`
+	position: fixed;
+	z-index: 5;
+	top: 75px;
+	right: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 30px;
+	transition: width 1s;
+	:hover {
+		width: 165px;
+	}
+
+	@media (max-width: 1000px) {
+		left: 10px;
+		top: 10px;
+		width: 165px;
+	}
 `;
 const StopMusicIcon = styled(GoUnmute)`
-	position: fixed;
-	z-index: 5;
-	top: 80px;
-	right: 12px;
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
-	@media (max-width: 1000px) {
-		left: 15px;
-		top: 15px;
-	}
 `;
 const UnmuteIcon = styled(GoMute)`
-	position: fixed;
-	z-index: 5;
-	top: 80px;
-	right: 12px;
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
-	@media (max-width: 1000px) {
-		left: 15px;
-		top: 15px;
-	}
+`;
+const VolumeInput = styled.input`
+	display: ${(props) => (props.showVolume ? "block" : "none")};
 `;
