@@ -7,9 +7,9 @@ import MyExp from "./Routs/MyExp";
 import Projects from "./Routs/Projects";
 import Contact from "./Routs/Contact";
 import NavagationBar from "./NavagationBar";
-import { ToastContainer } from "react-toastify";
 import PopUpMenu from "./PopUpMenu";
-import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import { useEffect, useState } from "react";
 import { GoUnmute } from "react-icons/go";
 import { GoMute } from "react-icons/go";
 import backgroundMusic from "./Files/background-music.mp3";
@@ -17,29 +17,35 @@ import backgroundMusic from "./Files/background-music.mp3";
 export default function App() {
 	const [popUp, setPopUp] = useState(false);
 	const [musicState, setMusicState] = useState(false);
+
+	useEffect(() => {
+		playAudio();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [musicState]);
+
+	function playAudio() {
+		if (musicState) {
+			document.getElementById("music-player").play();
+		} else {
+			document.getElementById("music-player").pause();
+		}
+	}
+
 	return (
 		<BrowserRouter>
 			<NavagationBar />
 			<PopUpMenu popUp={popUp} setPopUp={setPopUp} />
-			<MusicPlayer
-				// loop="true"
-				// paused={musicState}
-				controls
-				autoplay
-			>
-				<source 
-					src={backgroundMusic} 
-					type="audio/mp3" 
-				/>
-				{/* Your browser does not support the audio tag. */}
+			<MusicPlayer id="music-player" loop>
+				<source src={backgroundMusic} type="audio/mp3" />
+				Your browser does not support the audio tag.
 			</MusicPlayer>
-			
 			<StopMusicIcon
-				musicState={musicState}
+				style={{ display: musicState ? "initial" : "none" }}
 				onClick={() => setMusicState(!musicState)}
 			/>
 			<UnmuteIcon
-				musicState={musicState}
+				style={{ display: musicState ? "none" : "initial" }}
 				onClick={() => setMusicState(!musicState)}
 			/>
 			<Routes>
@@ -56,10 +62,9 @@ export default function App() {
 }
 const MusicPlayer = styled.audio`
 	margin-top: 70px;
-`
+`;
 const StopMusicIcon = styled(GoUnmute)`
 	position: fixed;
-	display: ${(props) => (props.musicState ? "none" : "inicial")};
 	z-index: 5;
 	top: 80px;
 	right: 12px;
@@ -73,7 +78,6 @@ const StopMusicIcon = styled(GoUnmute)`
 `;
 const UnmuteIcon = styled(GoMute)`
 	position: fixed;
-	display: ${(props) => (props.musicState ? "initial" : "none")};
 	z-index: 5;
 	top: 80px;
 	right: 12px;

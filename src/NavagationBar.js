@@ -74,7 +74,7 @@ const StyledNavagationBar = styled.div`
 		color: aqua;
 		border-right: gray solid 1px;
 		cursor: pointer;
-		
+
 		:hover p {
 			color: white;
 			transition: 0.5s;
@@ -83,7 +83,7 @@ const StyledNavagationBar = styled.div`
 		&:nth-child(1) {
 			justify-content: space-evenly;
 			text-align: center;
-			padding: 10px 20px 0 20px;
+			padding: 10px 25px 0 20px;
 			:hover p {
 				color: white;
 				transition: 0.5s;
