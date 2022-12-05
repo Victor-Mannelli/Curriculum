@@ -111,8 +111,10 @@ const StopMusicIcon = styled(GoUnmute)`
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
+	color: white;
 `;
 const UnmuteIcon = styled(GoMute)`
+	color: white;
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
