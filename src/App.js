@@ -1,18 +1,18 @@
 import styled from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomeScreen from "./Routs/HomeScreen";
-import AboutMe from "./Routs/AboutMe";
-import MyExp from "./Routs/MyExp";
-import Projects from "./Routs/Projects";
-import Contact from "./Routs/Contact";
-import NavagationBar from "./NavagationBar";
-import PopUpMenu from "./PopUpMenu";
 import { ToastContainer } from "react-toastify";
 import { useEffect, useState } from "react";
 import { GoUnmute } from "react-icons/go";
 import { GoMute } from "react-icons/go";
 import backgroundMusic from "./Files/background-music.mp3";
+import HomeScreen from "./Routs/HomeScreen";
+import AboutMe from "./Routs/AboutMe";
+import MyExp from "./Routs/MyExp";
+import Projects from "./Routs/Projects";
+import Contact from "./Routs/ContactMe";
+import NavagationBar from "./NavagationBar";
+import PopUpMenu from "./PopUpMenu";
 
 export default function App() {
 	const [popUp, setPopUp] = useState(false);

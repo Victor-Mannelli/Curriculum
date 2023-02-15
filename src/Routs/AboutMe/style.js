@@ -1,39 +1,6 @@
 import styled from "styled-components";
-import me from "./Routs Files/me.png";
-import wall from "./Routs Files/wallpaper.jpg";
-export default function AboutMe() {
-	return (
-		<AboutMePage>
-			<StyledAboutMe>
-				<Profile>
-					<Me src={me} alt="" />
-					<h1> Victor Mendes Mannelli</h1>
-				</Profile>
-				<Description>
-					<h1> Who am I ? </h1>
-					<p>
-						I'm a Full Stack Developer located in Brazil. I'm passionate about
-						solving problems and eager to learn more.
-					</p>
-					<p>
-						Well organised person, problem solver, independent employee with
-						high attention to detail. I love anime, video-games, music, learning
-						new languages, running and drawing.
-					</p>
-					<p>
-						Interested in the whole process of web and software development,
-						A.I.s, video-game development and virtual reality.
-					</p>
-					<h2> Let's develop something cool together! </h2>
-				</Description>
-			</StyledAboutMe>
-			<StyledImg>
-				<img src={wall} alt="" />
-			</StyledImg>
-		</AboutMePage>
-	);
-}
-const AboutMePage = styled.div`
+
+export const AboutMePage = styled.div`
 	min-height: 100vh;
 
 	display: grid;
@@ -52,7 +19,7 @@ const AboutMePage = styled.div`
 		grid-template-rows: 100%;
 	}
 `;
-const StyledAboutMe = styled.div`
+export const StyledAboutMe = styled.div`
 	justify-self: center;
 	align-self: center;
 
@@ -63,7 +30,7 @@ const StyledAboutMe = styled.div`
 	color: aqua;
 	font-family: "Roboto", sans-serif;
 `;
-const Profile = styled.div`
+export const Profile = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -75,13 +42,13 @@ const Profile = styled.div`
 	font-family: "Alkalami", serif;
 	font-size: 18px;
 `;
-const Me = styled.img`
+export const Me = styled.img`
 	width: 150px;
 	height: 150px;
 	border-radius: 50%;
 	margin-bottom: 20px;
 `;
-const Description = styled.div`
+export const Description = styled.div`
 	width: 100%;
 	height: 100%;
 	margin: 15px 20px 15px 40px;
@@ -108,7 +75,7 @@ const Description = styled.div`
 		width: 93%;
 	}
 `;
-const StyledImg = styled.div`
+export const StyledImg = styled.div`
 	justify-self: center;
 	align-self: center;
 	width: 80%;
