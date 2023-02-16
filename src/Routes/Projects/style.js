@@ -61,9 +61,16 @@ export const ProjectsDiv = styled.div`
 	flex-wrap: wrap;
 	height: 100%;
 `;
-export const Loading = styled.img`
-	width: 100px;
-	height: 100px;
+export const LoadingPage = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #2a2a2a;
+	min-height: 100vh;
+	img {
+		width: 100px;
+		height: 100px;
+	}
 `;
 export const ProjectTitle = styled.h2`
 	color: rgb(0, 255, 255);

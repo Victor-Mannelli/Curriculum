@@ -2,6 +2,7 @@ import ApiImage from "../Routs Files/API.png";
 import { useLocation } from "react-router-dom";
 import {
 	Loading,
+	LoadingPage,
 	ProjectsDiv,
 	ProjectsPage,
 	ProjectTitle,
@@ -14,7 +15,7 @@ import { useProjects } from "../../Services/projects/hooks/useProjects";
 export default function Projects() {
 	const { pathname } = useLocation();
 	const { projectsData, isFetching, isError } = useProjects();
-
+	
 	if (isError) {
 		return (
 			<ProjectsPage>
@@ -24,9 +25,9 @@ export default function Projects() {
 	}
 	if (isFetching) {
 		return (
-			<ProjectsPage>
-				<Loading alt="loading" src={loading} />
-			</ProjectsPage>
+			<LoadingPage>
+				<img alt="loading" src={loading} />
+			</LoadingPage>
 		);
 	}
 
