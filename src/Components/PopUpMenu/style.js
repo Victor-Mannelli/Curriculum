@@ -1,92 +1,8 @@
 import styled from "styled-components";
-import logo from "./Files/logo.png";
-import { useNavigate } from "react-router-dom";
 import { TfiMenu } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
 
-export default function PopUpMenu({ popUp, setPopUp }) {
-	const navigate = useNavigate();
-	if (popUp === true) {
-		return (
-			<PopUpScreen>
-				<Header>
-					<MenuIconClose onClick={() => setPopUp(false)} />
-					<Logo src={logo} alt="logo" />
-					<p> Victor Mannelli </p>
-					<h1>FullStack Developer</h1>
-				</Header>
-				<Content>
-					<ul>
-						<li
-							onClick={() => {
-								navigate("/");
-								setPopUp(false);
-							}}
-							data-text="HomeScreen"
-						>
-							<p> Home Screen </p>
-						</li>
-						<li
-							onClick={() => {
-								navigate("/about-me");
-								setPopUp(false);
-							}}
-							data-text="About Me"
-						>
-							<p> About Me </p>
-						</li>
-						<li
-							onClick={() => {
-								navigate("/my-exp");
-								setPopUp(false);
-							}}
-							data-text="Experiences"
-						>
-							<p> My Experiences </p>
-						</li>
-						<li
-							onClick={() => {
-								navigate("/projects");
-								setPopUp(false);
-							}}
-							data-text="Projects"
-						>
-							<p> Projects </p>
-						</li>
-						<li
-							onClick={() => {
-								navigate("/contact");
-								setPopUp(false);
-							}}
-							data-text="Contact Me"
-						>
-							<p> Contact Me </p>
-						</li>
-					</ul>
-				</Content>
-				<Footer>
-					<a
-						href="https://github.com/Victor-Mannelli"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<ion-icon alt="github" name="logo-github" />
-					</a>
-					<a
-						href="https://www.linkedin.com/in/victor-mendes-mannelli-740aa2246/"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<ion-icon alt="linkedin" name="logo-linkedin" />
-					</a>
-				</Footer>
-			</PopUpScreen>
-		);
-	} else {
-		return <MenuIconOpen onClick={() => setPopUp(true)} />;
-	}
-}
-const MenuIconClose = styled(IoClose)`
+export const MenuIconClose = styled(IoClose)`
 	position: fixed;
 	top: 10px;
 	right: 7px;
@@ -99,7 +15,7 @@ const MenuIconClose = styled(IoClose)`
 		color: lightgray;
 	}
 `;
-const MenuIconOpen = styled(TfiMenu)`
+export const MenuIconOpen = styled(TfiMenu)`
 	position: fixed;
 	z-index: 5;
 	top: 15px;
@@ -116,7 +32,7 @@ const MenuIconOpen = styled(TfiMenu)`
 		display: initial;
 	}
 `;
-const PopUpScreen = styled.div`
+export const PopUpScreen = styled.div`
 	position: fixed;
 	z-index: 5;
 
@@ -128,7 +44,7 @@ const PopUpScreen = styled.div`
 	background-color: #2a2a2a;
 	overflow: hidden;
 `;
-const Content = styled.div`
+export const Content = styled.div`
 	padding-top: 145px;
 	width: 250px;
 	align-self: center;
@@ -210,11 +126,11 @@ const Content = styled.div`
 		padding-top: 70px;
 	}
 `;
-const Logo = styled.img`
+export const Logo = styled.img`
 	width: 100px;
 	height: 100px;
 `;
-const Header = styled.div`
+export const Header = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -236,7 +152,7 @@ const Header = styled.div`
 		cursor: default;
 	}
 `;
-const Footer = styled.div`
+export const Footer = styled.div`
 	position: fixed;
 	bottom: 0;
 	left: 0;

@@ -11,8 +11,8 @@ import AboutMe from "./Routes/AboutMe";
 import MyExp from "./Routes/MyExp";
 import Projects from "./Routes/Projects";
 import Contact from "./Routes/ContactMe";
-import NavagationBar from "./NavagationBar";
-import PopUpMenu from "./PopUpMenu";
+import NavagationBar from "./Components/NavigationBar";
+import PopUpMenu from "./Components/PopUpMenu"
 
 export default function App() {
 	const [popUp, setPopUp] = useState(false);
