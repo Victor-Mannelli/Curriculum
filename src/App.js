@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import { GoUnmute } from "react-icons/go";
 import { GoMute } from "react-icons/go";
 import backgroundMusic from "./Files/background-music.mp3";
-import HomeScreen from "./Routs/HomeScreen";
-import AboutMe from "./Routs/AboutMe";
-import MyExp from "./Routs/MyExp";
-import Projects from "./Routs/Projects";
-import Contact from "./Routs/ContactMe";
+import HomeScreen from "./Routes/HomeScreen";
+import AboutMe from "./Routes/AboutMe";
+import MyExp from "./Routes/MyExp";
+import Projects from "./Routes/Projects";
+import Contact from "./Routes/ContactMe";
 import NavagationBar from "./NavagationBar";
 import PopUpMenu from "./PopUpMenu";
 

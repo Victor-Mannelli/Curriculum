@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export const ProjectsPage = styled.div `
+export const ProjectsPage = styled.div`
 	padding-bottom: 30px;
-	padding-top: ${props => props.pathname === "/projects" ? "70px" : "45px"};
+	padding-top: ${(props) => (props.pathname === "/projects" ? "70px" : "45px")};
 	background-color: #2a2a2a;
 	min-height: 100vh;
-	@media(max-width: 1000px){
+	@media (max-width: 1000px) {
 		padding: 30px 0 30px 0;
 	}
-`
+`;
 export const StyledHeader = styled.div`
 	display: flex;
 	align-items: center;
@@ -19,12 +19,13 @@ export const StyledHeader = styled.div`
 	cursor: default;
 
 	h1 {
-		color: rgb(0, 255, 255);
-		font-family: 'Alkalami', serif;
+		font-family: "Alkalami", serif;
 		font-size: 50px;
+		text-align: center;
 		padding-top: 15px;
+		color: rgb(0, 255, 255);
 	}
-	@media(max-width: 360px) {
+	@media (max-width: 360px) {
 		padding: 0 0 0 20px;
 	}
 `;
@@ -32,20 +33,25 @@ export const StyledProject = styled.div`
 	position: relative;
 	width: 500px;
 	height: 300px;
-    margin-top: 35px;
+	margin-top: 35px;
+	cursor: pointer;
 
 	img {
 		width: 100%;
 		height: 100%;
+		border-radius: 20px;
+		:hover {
+			border: gray 1px solid;
+		}
 	}
 	h1 {
 		position: absolute;
-		bottom: 0;
-		left: 0;
-
-		font-family: "Roboto", sans-serif;
-		color: #ffffff;
-		cursor: pointer;
+		top: 10%;
+		left: 50%;
+		transform: translate(-50%, -10%);
+		font-family: "Alkalami", serif;
+		font-size: 20px;
+		/* color: #2a2a2a; */
 	}
 `;
 export const ProjectsDiv = styled.div`
@@ -54,4 +60,21 @@ export const ProjectsDiv = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	height: 100%;
+`;
+export const Loading = styled.img`
+	position: fixed;
+	z-index: 2;
+	left: 50%;
+	top: 55%;
+	transform: translate(-50%, -55%);
+
+	width: 100px;
+	height: 100px;
+`;
+export const ProjectTitle = styled.h2`
+	color: rgb(0, 255, 255);
+	font-family: "Alkalami", serif;
+	font-size: 30px;
+	text-align: center;
+	padding-top: 46px;
 `;
