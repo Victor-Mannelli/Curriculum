@@ -62,12 +62,6 @@ export const ProjectsDiv = styled.div`
 	height: 100%;
 `;
 export const Loading = styled.img`
-	position: fixed;
-	z-index: 2;
-	left: 50%;
-	top: 55%;
-	transform: translate(-50%, -55%);
-
 	width: 100px;
 	height: 100px;
 `;
