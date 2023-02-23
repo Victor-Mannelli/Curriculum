@@ -1,12 +1,20 @@
-import { AboutMePage, Description, Me, Profile, StyledAboutMe, StyledImg } from "./style";
-import me from "../Routs Files/me.png";
-import wall from "../Routs Files/wallpaper.jpg";
+import me from "../../Files/me.png";
+import {
+	AboutMePage,
+	Description,
+	Profile,
+	StyledAboutMe,
+	StyledImg,
+} from "./style";
+import { toolsAndLibraries } from "../../Constants/index";
+
 export default function AboutMe() {
+
 	return (
 		<AboutMePage>
 			<StyledAboutMe>
 				<Profile>
-					<Me src={me} alt="" />
+					<img src={me} alt="" />
 					<h1> Victor Mendes Mannelli</h1>
 				</Profile>
 				<Description>
@@ -28,7 +36,11 @@ export default function AboutMe() {
 				</Description>
 			</StyledAboutMe>
 			<StyledImg>
-				<img src={wall} alt="" />
+				{toolsAndLibraries.map((e) => (
+					<a href={e.link} key={e.id} target="blank">
+						<img alt={e.alt} src={e.src}/>
+					</a>
+				))}
 			</StyledImg>
 		</AboutMePage>
 	);

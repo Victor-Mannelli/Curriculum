@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { Experiences, SkillText, StyledMyExp } from "./style";
-import WorkPlaceArray from "../Routs Files/WorkPlacesArray";
+import { skillsAndExp } from "../../Constants/index";
 
 export default function MyExp() {
 	const navigate = useNavigate();
@@ -21,16 +21,25 @@ export default function MyExp() {
 				<h1> Skills and Experiences </h1>
 				<p>
 					My first contact with programming was through college where I studied
-					python calculation logics.
-				</p>
-				<p>
-					In the beggining I couldn't see the potential and all the fun I could
-					have programming, since college can make even fun things boring...
+					python calculation logics, in the beggining I couldn't see the
+					potential and all the fun I could have programming, but...
 				</p>
 				<p>
 					One day I found out Driven Education and my eyes were oppened to
-					everything I could achieve and do with programming and how fast It
-					could be with their help.
+					everything I could achieve with programming and how fast It could be
+					with their help.
+				</p>
+				<p>
+					When I was with them I had +1200 hours focused on projects using
+					tecnologies such as HTML, CSS, Javascript, React, Node.js,
+					NoSQL(MongoDB), SQL(PostgreSQL), Prisma, Jest, Typescript, Docker,
+					AWS...
+				</p>
+				<p>
+					While also studying programming logics, data structure, object
+					orientation, software architecture, tests and clean code using scrum,
+					git, slack and trello whilst receiving and giving feedbacks,
+					developing professional abilities and behavior
 				</p>
 				<p>
 					Now I'm here trying to do something I really like for a living and I
@@ -50,7 +59,7 @@ export default function MyExp() {
 				</h2>
 			</SkillText>
 			<Experiences>
-				{WorkPlaceArray.map((e, i) => (
+				{skillsAndExp.map((e, i) => (
 					<WorkPlace
 						key={i}
 						title={e.title}

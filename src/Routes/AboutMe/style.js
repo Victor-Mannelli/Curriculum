@@ -14,7 +14,7 @@ export const AboutMePage = styled.div`
 		padding-top: 40px;
 		grid-template-columns: 100%;
 	}
-	@media (max-width: 360px){
+	@media (max-width: 360px) {
 		grid-template-columns: 100%;
 		grid-template-rows: 100%;
 	}
@@ -41,12 +41,13 @@ export const Profile = styled.div`
 	height: 200px;
 	font-family: "Alkalami", serif;
 	font-size: 18px;
-`;
-export const Me = styled.img`
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	margin-bottom: 20px;
+
+	img {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		margin-bottom: 20px;
+	}
 `;
 export const Description = styled.div`
 	width: 100%;
@@ -71,18 +72,19 @@ export const Description = styled.div`
 		padding-right: 15px;
 		width: 80%;
 	}
-	@media (max-width: 360px){
+	@media (max-width: 360px) {
 		width: 93%;
 	}
 `;
 export const StyledImg = styled.div`
 	justify-self: center;
 	align-self: center;
-	width: 80%;
-	height: 50%;
+	width: 75%;
+	height: 70%;
 	img {
-		width: 100%;
-		height: 100%;
+		padding: 5px;
+		width: 20%;
+		height: 20%;
 	}
 	@media (max-width: 1000px) {
 		height: 100%;
@@ -90,5 +92,5 @@ export const StyledImg = styled.div`
 	}
 	@media (max-width: 360px) {
 		display: none;
-	}
+	} 
 `;

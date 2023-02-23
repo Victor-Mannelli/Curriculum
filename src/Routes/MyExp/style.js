@@ -34,8 +34,8 @@ export const SkillText = styled.div`
 	p {
 		color: white;
 		font-size: 18px;
-		line-height: 25px;
-		padding-bottom: 20px;
+		line-height: 23px;
+		padding-bottom: 15px;
 		text-align: justify;
 	}
 	h2 {

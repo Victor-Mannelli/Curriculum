@@ -1,16 +1,8 @@
-import ApiImage from "../Routs Files/API.png";
+import ApiImage from "../../Files/API.png"
+import loading from "../../Files/loading.gif";
 import { useLocation } from "react-router-dom";
-import {
-	Loading,
-	LoadingPage,
-	ProjectsDiv,
-	ProjectsPage,
-	ProjectTitle,
-	StyledHeader,
-	StyledProject,
-} from "./style";
-import loading from "../Routs Files/loading.gif";
 import { useProjects } from "../../Services/projects/hooks/useProjects";
+import { LoadingPage, ProjectsDiv, ProjectsPage, ProjectTitle, StyledHeader,	StyledProject } from "./style";
 
 export default function Projects() {
 	const { pathname } = useLocation();

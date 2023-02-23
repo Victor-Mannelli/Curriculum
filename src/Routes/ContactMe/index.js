@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ContactMe, ContactMePage, NameAndEmail, StyledForm, StyledImg } from "./style";
-import wall from "../Routs Files/wallpaper.jpg";
+import wall from "../../Files/wallpaper.jpg";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
