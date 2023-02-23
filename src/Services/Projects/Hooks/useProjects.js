@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useGetProjects } from "..";
+import { useGetProjects } from "../index";
 
 export function useProjects() {
 	const [projectsData, setProjectsData] = useState({

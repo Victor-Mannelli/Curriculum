@@ -1,7 +1,7 @@
 import ApiImage from "../../Files/API.png"
 import loading from "../../Files/loading.gif";
 import { useLocation } from "react-router-dom";
-import { useProjects } from "../../Services/projects/hooks/useProjects";
+import { useProjects } from "../../Services/Projects/Hooks/useProjects";
 import { LoadingPage, ProjectsDiv, ProjectsPage, ProjectTitle, StyledHeader,	StyledProject } from "./style";
 
 export default function Projects() {

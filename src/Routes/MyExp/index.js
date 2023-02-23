@@ -5,7 +5,7 @@ import { skillsAndExp } from "../../Constants/index";
 export default function MyExp() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
-
+	console.log(pathname)
 	function WorkPlace({ title, date, description }) {
 		return (
 			<div>

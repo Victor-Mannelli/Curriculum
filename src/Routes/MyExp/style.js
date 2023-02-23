@@ -3,11 +3,8 @@ import styled from "styled-components";
 export const StyledMyExp = styled.div`
 	display: grid;
 	grid-template-columns: 55% 45%;
-
 	min-height: 100vh;
-	padding-top: 80px;
-
-	min-height: 100vh;
+	padding: ${props => props.pathname === "/" ? "25px 0 30px 0" : "80px 0 30px 0"};
 	color: white;
 	background: #1d1d1d;
 	cursor: default;

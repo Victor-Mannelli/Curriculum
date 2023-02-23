@@ -9,13 +9,12 @@ import {
 import { toolsAndLibraries } from "../../Constants/index";
 
 export default function AboutMe() {
-
 	return (
 		<AboutMePage>
 			<StyledAboutMe>
 				<Profile>
 					<img src={me} alt="" />
-					<h1> Victor Mendes Mannelli</h1>
+					<h1> Victor Mendes Mannelli </h1>
 				</Profile>
 				<Description>
 					<h1> Who am I ? </h1>

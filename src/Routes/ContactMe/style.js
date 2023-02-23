@@ -13,7 +13,7 @@ export const ContactMePage = styled.div`
 		grid-template-columns: 100%;
 	}
 	@media (max-width: 360px){
-		padding-top: 0px;
+		padding-top: 10px;
 		grid-template-columns: 100%;
 	}
 `;
