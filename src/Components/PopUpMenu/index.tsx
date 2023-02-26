@@ -1,15 +1,25 @@
 import logo from "../../Files/logo.png";
 import { useNavigate } from "react-router-dom";
-import { Content, Footer, Header, Logo, MenuIconClose, MenuIconOpen, PopUpScreen } from "./style";
+import {
+	PopUpScreen,
+	Header,
+	Content,
+	Footer,
+	GitHubIcon,
+	LinkedinIcon,
+	MenuIconClose,
+	MenuIconOpen,
+} from "./style";
+import { PopUpMenuType } from "../../Types";
 
-export default function PopUpMenu({ popUp, setPopUp }) {
+export default function PopUpMenu({ popUp, setPopUp }: PopUpMenuType) {
 	const navigate = useNavigate();
 	if (popUp === true) {
 		return (
 			<PopUpScreen>
 				<Header>
 					<MenuIconClose onClick={() => setPopUp(false)} />
-					<Logo src={logo} alt="logo" />
+					<img src={logo} alt="logo" />
 					<p> Victor Mannelli </p>
 					<h1>FullStack Developer</h1>
 				</Header>
@@ -68,14 +78,14 @@ export default function PopUpMenu({ popUp, setPopUp }) {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<ion-icon alt="github" name="logo-github" />
+						<GitHubIcon />
 					</a>
 					<a
 						href="https://www.linkedin.com/in/victor-mendes-mannelli-740aa2246/"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<ion-icon alt="linkedin" name="logo-linkedin" />
+						<LinkedinIcon />
 					</a>
 				</Footer>
 			</PopUpScreen>

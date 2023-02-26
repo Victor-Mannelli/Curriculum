@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 export const StyledNavigationBar = styled.div`
 	position: fixed;
@@ -86,3 +87,23 @@ export const Icons = styled.button`
 		}
 	}
 `;
+export const GitHubIcon = styled(BsGithub)`
+	cursor: pointer;
+		border-radius: 10px;
+
+		:hover {
+			color: white;
+			transition: 0.5s;
+			transform: scale(1.2);
+		}
+`
+export const LinkedinIcon = styled(BsLinkedin)`
+	cursor: pointer;
+		border-radius: 4px;
+
+		:hover {
+			color: white;
+			transition: 0.5s;
+			transform: scale(1.2);
+		}
+`

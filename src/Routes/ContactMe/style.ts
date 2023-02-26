@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { PathNameType } from "../../Types";
 
-export const ContactMePage = styled.div`
+export const ContactMePage = styled.div<PathNameType>`
 	display: grid;
 	grid-template-columns: 50% 50%;
 	align-items: center;

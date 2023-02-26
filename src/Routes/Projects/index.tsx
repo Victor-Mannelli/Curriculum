@@ -3,6 +3,7 @@ import loading from "../../Files/loading.gif";
 import { useLocation } from "react-router-dom";
 import { useProjects } from "../../Services/Projects/Hooks/useProjects";
 import { LoadingPage, ProjectsDiv, ProjectsPage, ProjectTitle, StyledHeader,	StyledProject } from "./style";
+import { ProjectComponentType } from "../../Types";
 
 export default function Projects() {
 	const { pathname } = useLocation();
@@ -10,7 +11,7 @@ export default function Projects() {
 	
 	if (isError) {
 		return (
-			<ProjectsPage>
+			<ProjectsPage pathname={pathname}>
 				<h1>Error</h1>;
 			</ProjectsPage>
 		);
@@ -34,7 +35,8 @@ export default function Projects() {
 					<Project
 						key={e.id}
 						projectLinks={e.html_url}
-						ProjectImage={`https://raw.githubusercontent.com/Victor-Mannelli/${e.name}/main/social.png`}
+						projectImage={`https://raw.githubusercontent.com/Victor-Mannelli/${e.name}/main/social.png`} 
+						projectName={""}					
 					/>
 				))}
 			</ProjectsDiv>
@@ -45,18 +47,18 @@ export default function Projects() {
 						key={e.id}
 						projectLinks={e.html_url}
 						projectName={e.name}
-						ProjectImage={ApiImage}
+						projectImage={ApiImage}
 					/>
 				))}
 			</ProjectsDiv>
 		</ProjectsPage>
 	);
 }
-function Project({ projectLinks, projectName, ProjectImage }) {
+function Project({ projectLinks, projectName, projectImage }: ProjectComponentType) {
 	return (
 		<StyledProject>
 			<a href={projectLinks} target="_blank" rel="noreferrer">
-				<img src={ProjectImage} alt="Project-Preview" />
+				<img src={projectImage} alt="Project-Preview" />
 			</a>
 			<h1>{projectName}</h1>
 		</StyledProject>

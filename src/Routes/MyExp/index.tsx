@@ -1,12 +1,13 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { Experiences, SkillText, StyledMyExp } from "./style";
 import { skillsAndExp } from "../../Constants/index";
+import { SkillsAndExpType } from "../../Types";
 
 export default function MyExp() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
-	console.log(pathname)
-	function WorkPlace({ title, date, description }) {
+
+	function WorkPlace({ title, date, description } : SkillsAndExpType) {
 		return (
 			<div>
 				<h1> {title} </h1>
@@ -15,6 +16,7 @@ export default function MyExp() {
 			</div>
 		);
 	}
+
 	return (
 		<StyledMyExp pathname={pathname}>
 			<SkillText>

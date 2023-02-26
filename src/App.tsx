@@ -2,7 +2,7 @@ import styled from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GoUnmute } from "react-icons/go";
 import { GoMute } from "react-icons/go";
 import backgroundMusic from "./Files/background-music.mp3";
@@ -12,37 +12,29 @@ import MyExp from "./Routes/MyExp";
 import Projects from "./Routes/Projects";
 import Contact from "./Routes/ContactMe";
 import NavagationBar from "./Components/NavigationBar";
-import PopUpMenu from "./Components/PopUpMenu"
+import PopUpMenu from "./Components/PopUpMenu";
+import { ShowVolumeType } from "./Types";
 
 export default function App() {
 	const [popUp, setPopUp] = useState(false);
 	const [musicState, setMusicState] = useState(false);
-	const [musicVolume, setMusicVolume] = useState(20);
+	const [volume, setVolume] = useState(15);
 	const [showVolume, setShowVolume] = useState(false);
-	const [showMusic, setShowMusic] = useState(false);
+	const audioRef = useRef<HTMLAudioElement>(null);
 
 	useEffect(() => {
-		playAudio();
-
+		musicState === true ? audioRef.current?.play() : audioRef.current?.pause();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [musicState]);
-	useEffect(() => {
-		document.getElementById("music-player").volume = musicVolume / 100;
 
+	useEffect(() => {
+		if(audioRef.current) audioRef.current.volume = volume / 100;
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [musicVolume]);
+	}, [volume]);
 
 	function handleClick() {
-		if (showMusic === true) return
-		setShowMusic(true);
+		if (musicState === true) return;
 		setMusicState(true);
-	}
-	function playAudio() {
-		if (musicState) {
-			document.getElementById("music-player").play();
-		} else {
-			document.getElementById("music-player").pause();
-		}
 	}
 
 	return (
@@ -51,23 +43,24 @@ export default function App() {
 				<NavagationBar />
 				<PopUpMenu popUp={popUp} setPopUp={setPopUp} />
 				<MusicBox onMouseLeave={() => setShowVolume(false)}>
-					<audio id="music-player" loop>
+					<audio ref={audioRef} autoPlay={true} loop>
 						<source src={backgroundMusic} type="audio/mp3" />
 						Your browser does not support the audio tag.
 					</audio>
-					<StopMusicIcon
-						style={{ display: musicState ? "initial" : "none" }}
-						onClick={() => setMusicState(!musicState)}
-						onMouseOver={() => setShowVolume(true)}
-					/>
-					<UnmuteIcon
-						style={{ display: musicState ? "none" : "initial" }}
-						onClick={() => setMusicState(!musicState)}
-						onMouseOver={() => setShowVolume(true)}
-					/>
+					{musicState ? (
+						<StopMusicIcon
+							onClick={() => setMusicState(!musicState)}
+							onMouseOver={() => setShowVolume(true)}
+						/>
+					) : (
+						<UnmuteIcon
+							onClick={() => setMusicState(!musicState)}
+							onMouseOver={() => setShowVolume(true)}
+						/>
+					)}
 					<VolumeInput
-						onChange={(e) => setMusicVolume(e.target.value)}
-						value={musicVolume}
+						onChange={(e) => setVolume(Number(e.target.value))}
+						value={volume}
 						type="range"
 						min="0"
 						max="100"
@@ -119,6 +112,6 @@ const UnmuteIcon = styled(GoMute)`
 	height: 25px;
 	cursor: pointer;
 `;
-const VolumeInput = styled.input`
+const VolumeInput = styled.input<ShowVolumeType>`
 	display: ${(props) => (props.showVolume ? "block" : "none")};
 `;

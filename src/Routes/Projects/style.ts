@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { PathNameType } from "../../Types";
 
-export const ProjectsPage = styled.div`
+export const ProjectsPage = styled.div<PathNameType>`
 	padding-bottom: 30px;
 	padding-top: ${(props) => (props.pathname === "/projects" ? "70px" : "45px")};
 	background-color: #2a2a2a;

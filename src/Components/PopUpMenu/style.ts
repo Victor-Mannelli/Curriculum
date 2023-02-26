@@ -1,37 +1,8 @@
 import styled from "styled-components";
 import { TfiMenu } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 
-export const MenuIconClose = styled(IoClose)`
-	position: fixed;
-	top: 10px;
-	right: 7px;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	color: white;
-	
-	:hover {
-		color: lightgray;
-	}
-`;
-export const MenuIconOpen = styled(TfiMenu)`
-	position: fixed;
-	z-index: 5;
-	top: 15px;
-	right: 15px;
-	display: none;
-	width: 30px;
-	height: 30px;
-	color: white;
-	cursor: pointer;
-	:hover {
-		color: lightgray;
-	}
-	@media (max-width: 1000px) {
-		display: initial;
-	}
-`;
 export const PopUpScreen = styled.div`
 	position: fixed;
 	z-index: 5;
@@ -126,10 +97,6 @@ export const Content = styled.div`
 		padding-top: 70px;
 	}
 `;
-export const Logo = styled.img`
-	width: 100px;
-	height: 100px;
-`;
 export const Header = styled.div`
 	position: fixed;
 	top: 0;
@@ -151,6 +118,10 @@ export const Header = styled.div`
 		padding-bottom: 7px;
 		cursor: default;
 	}
+	img {
+		width: 100px;
+		height: 100px;
+	}
 `;
 export const Footer = styled.div`
 	position: fixed;
@@ -164,16 +135,59 @@ export const Footer = styled.div`
 		padding: 40px 20px;
 		cursor: default;
 	}
-	ion-icon {
-		width: 30px;
-		height: 30px;
-		color: cyan;
-		cursor: pointer;
-		:hover {
-            transition: 0.5s;
-			transform: scale(1.4);
-			z-index: 1000;
-			color: white;
-		}
+`;
+
+export const MenuIconClose = styled(IoClose)`
+	position: fixed;
+	top: 10px;
+	right: 7px;
+
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	color: white;
+	:hover {
+		color: lightgray;
 	}
 `;
+export const MenuIconOpen = styled(TfiMenu)`
+	position: fixed;
+	z-index: 5;
+	top: 15px;
+	right: 15px;
+	display: none;
+	width: 30px;
+	height: 30px;
+	color: white;
+	cursor: pointer;
+	:hover {
+		color: lightgray;
+	}
+	@media (max-width: 1000px) {
+		display: initial;
+	}
+`;
+export const GitHubIcon = styled(BsGithub)`
+	width: 30px;
+	height: 30px;
+	color: cyan;
+	cursor: pointer;
+	:hover {
+					transition: 0.5s;
+		transform: scale(1.4);
+		z-index: 1000;
+		color: white;
+	}
+`
+export const LinkedinIcon = styled(BsLinkedin)`
+	width: 30px;
+	height: 30px;
+	color: cyan;
+	cursor: pointer;
+	:hover {
+					transition: 0.5s;
+		transform: scale(1.4);
+		z-index: 1000;
+		color: white;
+	}
+`
