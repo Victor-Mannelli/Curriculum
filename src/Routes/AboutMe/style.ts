@@ -4,6 +4,7 @@ export const AboutMePage = styled.div`
 	display: grid;
 	grid-template-columns: 55% 45%;
 	min-height: 100vh;
+	scroll-snap-align: start;
 	padding: 80px 0 20px 0;
 	background-color: #2a2a2a;
 	cursor: default;

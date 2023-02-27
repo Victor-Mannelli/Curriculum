@@ -9,7 +9,7 @@ import {
 	StyledForm,
 	StyledImg,
 } from "./style";
-import wall from "../../Files/wallpaper.jpg";
+import email from "../../Files/email.png";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -55,10 +55,12 @@ export default function Contact() {
 				<h1> Contact me </h1>
 				<p>
 					I'm Interested in web, software and game development, AIs and virtual
-					reality. Currently searching for a company to work with but also open
-					for freelance opportunities.
+					reality. 
 				</p>
-				<p>If I cross your mind don't hesitate to send me a message.</p>
+				<p>
+					Currently searching for work as a Full-Stack, Back End or Front-End Junior Developer!
+				</p>
+				<p> If you liked my work I would love to receive a message!</p>
 				<StyledForm ref={form} onSubmit={handleFormSubmit}>
 					<NameAndEmail>
 						<input
@@ -98,7 +100,7 @@ export default function Contact() {
 				</StyledForm>
 			</ContactMe>
 			<StyledImg>
-				<img src={wall} alt="" />
+				<img src={email} alt="" />
 			</StyledImg>
 		</ContactMePage>
 	);

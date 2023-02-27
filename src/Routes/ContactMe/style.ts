@@ -3,10 +3,12 @@ import { PathNameType } from "../../Types";
 
 export const ContactMePage = styled.div<PathNameType>`
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 70% 30%;
 	align-items: center;
 	justify-content: space-around;
+	
 	min-height: 100vh;
+	scroll-snap-align: center;
 	padding-top: 80px;
 	background: #1d1d1d;
 	@media (max-width: 1000px){
@@ -98,8 +100,9 @@ export const StyledImg = styled.div`
 	justify-self: center;
 	align-self: center;
 	
-	width: 80%;
-	height: 50%;
+	width: 100%;
+	height: 70%;
+	padding-right: 50px;
 	img {
 		width: 100%;
 		height: 100%;
@@ -107,8 +110,6 @@ export const StyledImg = styled.div`
 	@media (max-width: 1000px){
 		height: 100%;
 		padding: 10px 0 30px 0;
-	}
-	@media (max-width: 360px){
 		display: none;
 	}
 `;

@@ -5,11 +5,17 @@ export const StyledMyExp = styled.div<PathNameType>`
 	display: grid;
 	grid-template-columns: 55% 45%;
 	min-height: 100vh;
+	scroll-snap-align: start;
 	padding: ${props => props.pathname === "/" ? "15px 0 30px 0" : "80px 0 30px 0"};
+	padding: 80px 0 30px 0;
 	color: white;
 	background: #1d1d1d;
 	cursor: default;
 
+	@media (max-width: 1140px) {
+		grid-template-columns: 65% 35%;
+		padding: ${props => props.pathname === "/" ? "50px 0 30px 0" : "80px 0 30px 0"};
+	}
 	@media (max-width: 1000px) {
 		grid-template-columns: 100%;
 		padding: ${props => props.pathname === "/" ? "50px 0 30px 0" : "80px 0 30px 0"};

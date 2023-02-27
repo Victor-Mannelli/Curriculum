@@ -47,7 +47,7 @@ export default function App() {
 						<source src={backgroundMusic} type="audio/mp3" />
 						Your browser does not support the audio tag.
 					</audio>
-					{musicState ? (
+					{musicState && volume !== 0 ? (
 						<StopMusicIcon
 							onClick={() => setMusicState(!musicState)}
 							onMouseOver={() => setShowVolume(true)}
@@ -84,7 +84,7 @@ const MusicBox = styled.div`
 	position: fixed;
 	z-index: 5;
 	top: 75px;
-	right: 5px;
+	right: 25px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
