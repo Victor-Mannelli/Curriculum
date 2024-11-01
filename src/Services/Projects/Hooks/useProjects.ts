@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ProjectDataType } from "../../../Types";
+import { ProjectDataType } from "@/types";
 import { useGetProjects } from "../index";
 
 export function useProjects() {

@@ -1,14 +1,13 @@
-import { useNavigate } from "react-router-dom";
 import { StyledNavigationBar, Icons, GitHubIcon, LinkedinIcon } from "./style";
-import logo from "../../Files/logo.png";
+import { useNavigate } from "react-router-dom";
 
-export default function NavigationBar() {
+export function NavigationBar() {
 	const navigate = useNavigate();
 
 	return (
 		<StyledNavigationBar>
 			<div onClick={() => navigate("/")}>
-				<img src={logo} alt="logo" />
+				<img src={"files/logo.png"} alt="logo" />
 				<p> FullStack Developer </p>
 			</div>
 			<div onClick={() => navigate("/about-me")}>

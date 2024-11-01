@@ -1,70 +1,61 @@
-import styled from "styled-components";
-import GlobalStyle from "./GlobalStyle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { PopUpMenu, NavigationBar } from "./components";
 import { useEffect, useRef, useState } from "react";
-import { GoUnmute } from "react-icons/go";
-import { GoMute } from "react-icons/go";
-import backgroundMusic from "./Files/background-music.mp3";
+import { ToastContainer } from "react-toastify";
+import { GoUnmute, GoMute } from "@/utils";
 import HomeScreen from "./Routes/HomeScreen";
-import AboutMe from "./Routes/AboutMe";
-import MyExp from "./Routes/MyExp";
 import Projects from "./Routes/Projects";
 import Contact from "./Routes/ContactMe";
-import NavagationBar from "./Components/NavigationBar";
-import PopUpMenu from "./Components/PopUpMenu";
-import { ShowVolumeType } from "./Types";
+import GlobalStyle from "./GlobalStyle";
+import AboutMe from "./Routes/AboutMe";
+import styled from "styled-components";
+import MyExp from "./Routes/MyExp";
 
 export default function App() {
-	const [popUp, setPopUp] = useState(false);
 	const [musicState, setMusicState] = useState(false);
+	const [firstClick, setFirstClick] = useState(true);
+	const [popUp, setPopUp] = useState(false);
 	const [volume, setVolume] = useState(15);
-	const [showVolume, setShowVolume] = useState(false);
 	const audioRef = useRef<HTMLAudioElement>(null);
 
 	useEffect(() => {
-		musicState === true ? audioRef.current?.play() : audioRef.current?.pause();
+		musicState ? audioRef.current?.play() : audioRef.current?.pause();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [musicState]);
 
 	useEffect(() => {
-		if(audioRef.current) audioRef.current.volume = volume / 100;
+		if (audioRef.current) audioRef.current.volume = volume / 100;
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [volume]);
 
 	function handleClick() {
-		if (musicState === true) return;
+		if (musicState || !firstClick) return;
+		setFirstClick(false)
 		setMusicState(true);
 	}
 
 	return (
 		<BrowserRouter>
 			<div onClick={() => handleClick()}>
-				<NavagationBar />
+				<NavigationBar />
 				<PopUpMenu popUp={popUp} setPopUp={setPopUp} />
-				<MusicBox onMouseLeave={() => setShowVolume(false)}>
+				<MusicBox>
 					<audio ref={audioRef} autoPlay={true} loop>
-						<source src={backgroundMusic} type="audio/mp3" />
+						<source src="/files/bg-music.mp3" type="audio/mp3" />
 						Your browser does not support the audio tag.
 					</audio>
 					{musicState && volume !== 0 ? (
-						<StopMusicIcon
-							onClick={() => setMusicState(!musicState)}
-							onMouseOver={() => setShowVolume(true)}
-						/>
+						<StopMusicIcon onClick={() => setMusicState(!musicState)} />
 					) : (
-						<UnmuteIcon
-							onClick={() => setMusicState(!musicState)}
-							onMouseOver={() => setShowVolume(true)}
-						/>
+						<UnmuteIcon onClick={() => setMusicState(!musicState)} />
 					)}
-					<VolumeInput
+					<input
 						onChange={(e) => setVolume(Number(e.target.value))}
+						style={{ cursor: "pointer" }}
 						value={volume}
 						type="range"
-						min="0"
 						max="100"
-						showVolume={showVolume}
+						min="0"
 					/>
 				</MusicBox>
 				<Routes>
@@ -80,18 +71,26 @@ export default function App() {
 		</BrowserRouter>
 	);
 }
+
 const MusicBox = styled.div`
 	position: fixed;
 	z-index: 5;
-	top: 75px;
-	right: 25px;
+	top: 80px;
+	left: 15px;
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 30px;
-	transition: width 1s;
-	:hover {
-		width: 165px;
+	gap: 7px;
+
+	&:hover input {
+		width: 150px;
+	}
+
+	input {
+		width: 0px;
+		transition: width 0.5s ease;
+		overflow: hidden;
 	}
 
 	@media (max-width: 1000px) {
@@ -100,6 +99,7 @@ const MusicBox = styled.div`
 		width: 165px;
 	}
 `;
+
 const StopMusicIcon = styled(GoUnmute)`
 	width: 25px;
 	height: 25px;
@@ -111,7 +111,4 @@ const UnmuteIcon = styled(GoMute)`
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
-`;
-const VolumeInput = styled.input<ShowVolumeType>`
-	display: ${(props) => (props.showVolume ? "block" : "none")};
 `;

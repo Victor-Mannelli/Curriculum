@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PathNameType } from "../../Types";
+import { PathNameType } from "@/types";
 
 export const ProjectsPage = styled.div<PathNameType>`
 	padding-bottom: 30px;

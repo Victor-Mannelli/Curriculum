@@ -1,13 +1,13 @@
+import { Experiences, SkillText, StyledCompetences, StyledExpLevel, StyledMyExp } from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Experiences, SkillText, StyledMyExp } from "./style";
-import { skillsAndExp } from "../../Constants/index";
-import { SkillsAndExpType } from "../../Types";
+import { experienceLevels, skillsAndExp } from "@/utils";
+import { SkillsAndExpType } from "@/types";
 
 export default function MyExp() {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
 
-	function WorkPlace({ title, date, description } : SkillsAndExpType) {
+	function WorkPlace({ title, date, description }: SkillsAndExpType) {
 		return (
 			<div>
 				<h1> {title} </h1>
@@ -21,32 +21,23 @@ export default function MyExp() {
 		<StyledMyExp pathname={pathname}>
 			<SkillText>
 				<h1> Skills and Experiences </h1>
-				<p>
-					My first contact with programming was through college where I studied
-					python calculation logics, in the beggining I couldn't see the
-					potential and all the fun I could have programming, but...
-				</p>
-				<p>
-					One day I found out Driven Education and my eyes were oppened to
-					everything I could achieve with programming and how fast It could be
-					with their help.
-				</p>
-				<p>
-					When I was with them I had +1200 hours focused on projects using
-					tecnologies such as HTML, CSS, Javascript, React, Node.js,
-					NoSQL(MongoDB), SQL(PostgreSQL), Prisma, Jest, Typescript, Docker,
-					AWS...
-				</p>
-				<p>
-					While also studying programming logics, data structure, object
-					orientation, software architecture, tests and clean code using scrum,
-					git, slack and trello whilst receiving and giving feedbacks,
-					developing professional abilities and behavior
-				</p>
-				<p>
-					Now I'm here trying to do something I really like for a living and I
-					hope we can make my dreams come true.
-				</p>
+				<StyledExpLevel>
+					{experienceLevels.map(({ name, level, time }) => (
+						<li key={name}>
+							<span>{name}:</span>
+							<p>{level} {time}</p>
+						</li>
+					))}
+				</StyledExpLevel>
+				<StyledCompetences className='pl-5 pb-3 gap-5'>
+					<li> <span> Programming Languages: </span> HTML, CSS, JavaScript, Typescript, Go, Python; </li>
+					<li> <span> Frameworks: </span> React.js, Node.js, Next.js, Nest.js, Tailwind.css; </li>
+					<li> <span> ORMs: </span> Prisma; </li>
+					<li> <span> Code Versioning: </span> Git; </li>
+					<li> <span> Methodologies: </span> Scrum, Slack, Trello; </li>
+					<li> <span> Data Banks: </span> PostgreSQL, MongoDB; </li>
+					<li> <span> Tools: </span> Styled-Components, React-Icons; </li>
+				</StyledCompetences>
 				<h2>
 					Visit my&nbsp;
 					<a

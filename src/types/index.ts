@@ -4,10 +4,10 @@ export type SkillsAndExpType = {
   description: string
 };
 export type ToolsAndLibsType = {
-  id: number,
   link: string,
   alt: string,
-  src: string
+  src?: string
+  svg?: any;
 };
 export type ShowVolumeType = {
   showVolume: boolean

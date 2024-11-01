@@ -1,16 +1,10 @@
-import React, { useRef, useState } from "react";
+import { ContactMe, ContactMePage, NameAndEmail, StyledForm, StyledImg } from "./style";
 import { useLocation } from "react-router-dom";
+import { useRef, useState } from "react";
 import { toast } from "react-toastify";
-import { FormData } from "../../Types";
-import {
-	ContactMe,
-	ContactMePage,
-	NameAndEmail,
-	StyledForm,
-	StyledImg,
-} from "./style";
-import email from "../../Files/email.png";
+import { FormData } from "@/types";
 import emailjs from "@emailjs/browser";
+import React from "react";
 
 export default function Contact() {
 	const form = useRef(null);
@@ -54,11 +48,10 @@ export default function Contact() {
 			<ContactMe>
 				<h1> Contact me </h1>
 				<p>
-					I'm Interested in web, software and game development, AIs and virtual
-					reality. 
+					I'm have strong interest in technologies that directly impact users, such as web and software development, AI and virtual reality.
 				</p>
 				<p>
-					Currently searching for work as a Full-Stack, Back End or Front-End Junior Developer!
+				I am seeking a software development opportunity in a company that values the flexibility of remote work and the potential for international collaboration. My priority is to work in a technology-focused environment that encourages innovation and values the contributions of its professionals, providing room for teamwork, learning, and continuous growth.
 				</p>
 				<p> If you liked my work I would love to receive a message!</p>
 				<StyledForm ref={form} onSubmit={handleFormSubmit}>
@@ -100,7 +93,7 @@ export default function Contact() {
 				</StyledForm>
 			</ContactMe>
 			<StyledImg>
-				<img src={email} alt="" />
+				<img src="files/email.png" alt="" />
 			</StyledImg>
 		</ContactMePage>
 	);

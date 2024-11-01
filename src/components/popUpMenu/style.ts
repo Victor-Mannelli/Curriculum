@@ -154,7 +154,7 @@ export const MenuIconOpen = styled(TfiMenu)`
 	position: fixed;
 	z-index: 5;
 	top: 15px;
-	right: 15px;
+	right: 30px;
 	display: none;
 	width: 30px;
 	height: 30px;

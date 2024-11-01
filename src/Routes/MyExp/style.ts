@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PathNameType } from "../../Types";
+import { PathNameType } from "@/types";
 
 export const StyledMyExp = styled.div<PathNameType>`
 	display: grid;
@@ -14,11 +14,11 @@ export const StyledMyExp = styled.div<PathNameType>`
 
 	@media (max-width: 1140px) {
 		grid-template-columns: 65% 35%;
-		padding: ${props => props.pathname === "/" ? "50px 0 30px 0" : "80px 0 30px 0"};
+		padding: ${props => props.pathname === "/" ? "70px 0 30px 0" : "80px 0 30px 0"};
 	}
 	@media (max-width: 1000px) {
 		grid-template-columns: 100%;
-		padding: ${props => props.pathname === "/" ? "50px 0 30px 0" : "80px 0 30px 0"};
+		padding: ${props => props.pathname === "/" ? "70px 0 30px 0" : "80px 0 30px 0"};
 	}
 `;
 export const SkillText = styled.div`
@@ -38,28 +38,51 @@ export const SkillText = styled.div`
 		color: rgb(0, 255, 255);
 		font-family: "Alkalami", serif;
 		font-size: 50px;
-		padding-bottom: 20px;
+		padding-bottom: 1rem;
 	}
-	p {
-		color: white;
-		font-size: 18px;
-		line-height: 23px;
-		padding-bottom: 15px;
-		text-align: justify;
-	}
+
 	h2 {
 		color: rgb(0, 255, 255);
 		font-size: 18.83px;
-	}
-	a,
-	span {
-		font-weight: 700;
-		cursor: pointer;
-		:hover {
-			color: rgb(0, 210, 180);
-		}
+
+		a, span {
+			font-weight: 700;
+			cursor: pointer;
+
+			:hover {
+				color: rgb(0, 210, 180);
+			}
+		}	
 	}
 `;
+export const StyledExpLevel = styled.ul`
+	padding-bottom: 1rem;
+	li {
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+		font-size: 15px;
+		
+		p {
+			padding-top: 0.4rem;
+		}
+		span {
+			font-weight: bold;
+		}
+	}
+`
+export const StyledCompetences = styled.ul`
+	padding-bottom: 2rem;
+	font-size: 19px;
+	li {
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+		
+		span {
+			font-weight: bold;
+		}
+	}
+`
+
 export const Experiences = styled.div`
 	align-self: center;
 	justify-self: center;
@@ -68,7 +91,6 @@ export const Experiences = styled.div`
 	flex-direction: row;
 	flex-wrap: wrap;
 	font-family: "Roboto", sans-serif;
-	justify-content: center;
 
 	div {
 		width: 220px;
@@ -86,6 +108,13 @@ export const Experiences = styled.div`
 			color: lightgray;
 			padding-bottom: 15px;
 			line-height: 20px;
+		}
+	}
+
+	@media (max-width: 430px) {
+		div {
+			width: 45%;
+			height: 220px;
 		}
 	}
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PathNameType } from "../../Types";
+import { PathNameType } from "@/types";
 
 export const ContactMePage = styled.div<PathNameType>`
 	display: grid;

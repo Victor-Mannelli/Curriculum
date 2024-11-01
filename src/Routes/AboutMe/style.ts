@@ -9,23 +9,24 @@ export const AboutMePage = styled.div`
 	background-color: #2a2a2a;
 	cursor: default;
 
-	@media (max-width: 1080px) {
-		padding-top: 100px;
+	@media (max-width: 1200px) {
+		padding-top: 70px;
 		grid-template-columns: 100%;
 	}
 	@media (max-width: 1000px) {
 		padding-top: 40px;
 		grid-template-columns: 100%;
 	}
-	@media (max-width: 360px) {
+	@media (max-width: 430px) {
 		grid-template-columns: 100%;
-		padding: 0px 0 60px 0;
+		padding: 0 0 60px 0;
 	}
 `;
 export const StyledAboutMe = styled.div`
 	display: grid;
-	grid-template-rows: 35% 65%;
+	grid-template-rows: 40% 60%;
 	min-height: 100%;
+	padding-top: 1rem;
 
 	justify-self: center;
 	align-self: center;
@@ -37,15 +38,19 @@ export const Profile = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
 
 	font-family: "Alkalami", serif;
 	font-size: 18px;
+	margin-top: 2rem;
+
+	@media (max-width: 430) {
+		margin-top: 0rem;
+	}
 
 	img {
-		width: 150px;
-		height: 150px;
-		border-radius: 50%;
+		width: auto;
+		height: 15rem;
+		border-radius: 5%;
 		margin-bottom: 20px;
 	}
 `;
@@ -69,31 +74,48 @@ export const Description = styled.div`
 	h2 {
 		font-size: 20px;
 	}
-	@media (max-width: 1000px) {
-		padding-right: 15px;
+	@media (max-width: 1200px) {
 		width: 80%;
+		align-self: center;
 	}
-	@media (max-width: 360px) {
+	@media (max-width: 430px) {
 		width: 93%;
+		h1 {
+			margin-top: 0;
+		}
 	}
 `;
-export const StyledImg = styled.div`
+export const StyledToolsAndLibs = styled.div`
 	justify-self: center;
 	align-self: center;
-	width: 75%;
-	height: 70%;
+	width: 80%;
+	height: 80%;
+
 	img {
 		padding: 5px;
-		width: 20%;
-		height: 20%;
+		width: 100px;
+		height: 100px;
 	}
 	@media (max-width: 1000px) {
+		justify-self: top;
 		padding-top: 25px;
 		img {
 			padding: 10px 0 10px 0;
 		}
 	}
-	@media (max-width: 360px) {
+	@media (max-width: 430px) {
 		display: none;
 	}
 `;
+
+export const StyledSvg = styled.div`
+	position: absolute;	
+	width: 100px;
+	height: 100px;
+	padding: 5px;
+	svg {
+		padding: 5px;
+		background: white;
+		border-radius: 20%;
+	}
+`

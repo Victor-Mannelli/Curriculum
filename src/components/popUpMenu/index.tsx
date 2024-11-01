@@ -1,25 +1,15 @@
-import logo from "../../Files/logo.png";
+import { PopUpScreen, Header, Content, Footer, GitHubIcon, LinkedinIcon, MenuIconClose, MenuIconOpen } from "./style";
 import { useNavigate } from "react-router-dom";
-import {
-	PopUpScreen,
-	Header,
-	Content,
-	Footer,
-	GitHubIcon,
-	LinkedinIcon,
-	MenuIconClose,
-	MenuIconOpen,
-} from "./style";
-import { PopUpMenuType } from "../../Types";
+import { PopUpMenuType } from "@/types";
 
-export default function PopUpMenu({ popUp, setPopUp }: PopUpMenuType) {
+export function PopUpMenu({ popUp, setPopUp }: PopUpMenuType) {
 	const navigate = useNavigate();
 	if (popUp === true) {
 		return (
 			<PopUpScreen>
 				<Header>
 					<MenuIconClose onClick={() => setPopUp(false)} />
-					<img src={logo} alt="logo" />
+					<img src="files/logo.png" alt="logo" />
 					<p> Victor Mannelli </p>
 					<h1>FullStack Developer</h1>
 				</Header>

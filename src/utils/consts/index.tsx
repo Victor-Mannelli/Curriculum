@@ -1,119 +1,162 @@
-import { SkillsAndExpType, ToolsAndLibsType } from "../Types";
+import { SkillsAndExpType, ToolsAndLibsType } from "@/types";
 
 export const skillsAndExp: SkillsAndExpType[] = [
+	{
+		title: "GrupoDupla Holding",
+		date: "2023 - Current",
+		description: "Full Stack Developer, Junior I to Junior III",
+	},
+	{
+		title: "Udemy",
+		date: "2023 - 2024",
+		description: "Go Lang from Zero - Otávio Augusto Gallego",
+	},
 	{
 		title: "Driven",
 		date: "August / 2022 - April / 2023",
 		description:
-			"+25 projects on: HTML, CSS, Javascript, React, Node.js, MongoDB, SQL, Prisma, Jest, Typescript, Docker, AWS",
+			"+25 projects on: HTML, CSS, Javascript, React, Node.js, MongoDB, SQL, Prisma, Jest, Typescript, Docker",
 	},
 	{
 		title: "ECPE",
 		date: "September / 2022",
 		description: `Michigan Language Assessment _________________________ Test Taker ID: 500532674`
+	},
+	{
+		title: "Nanotechnology Degree (Interrupted)",
+		date: "2018 - 2022",
+		description: "Federal University of Rio de Janeiro"
 	}
 ];
 export const toolsAndLibraries: ToolsAndLibsType[] = [
 	{
-		id: 1,
 		link: "https://developer.mozilla.org/pt-BR/docs/Web/HTML/",
 		alt: "HTML",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg",
 	},
 	{
-		id: 2,
 		link: "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
 		alt: "CSS",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg",
 	},
 	{
-		id: 3,
 		link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/",
 		alt: "JavaScript",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg",
 	},
 	{
-		id: 4,
 		link: "http://reactjs.org/",
 		alt: "React",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
 	},
 	{
-		id: 5,
 		link: "https://nodejs.org/en/",
 		alt: "Node",
 		src: "https://raw.githubusercontent.com/jpb06/jpb06/master/icons/NodeJS-Dark.svg",
 	},
 	{
-		id: 6,
 		link: "https://www.typescriptlang.org/",
 		alt: "Typescript",
 		src: "https://raw.githubusercontent.com/jpb06/jpb06/master/icons/TypeScript.svg",
 	},
 	{
-		id: 7,
 		link: "https://eslint.org/",
 		alt: "Eslint",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg",
 	},
 	{
-		id: 8,
 		link: "https://www.prisma.io/",
 		alt: "Prisma",
 		src: "https://github.com/jpb06/jpb06/raw/master/icons/Prisma.svg",
 	},
 	{
-		id: 9,
 		link: "https://www.postgresql.org/",
 		alt: "PostgreSql",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
 	},
 	{
-		id: 10,
 		link: "https://tailwindcss.com/",
 		alt: "Tailwindcss",
-		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+		svg: (
+			<svg
+				role="img"
+				viewBox="0 0 24 24"
+				color="#06B6D4"
+				fill="currentColor"
+				xmlns="http://www.w3.org/2000/svg">
+				<title>Tailwind CSS </title>
+				<path
+					d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"
+				/>
+			</svg>
+		)
 	},
 	{
-		id: 11,
 		link: "https://jestjs.io/pt-BR/",
 		alt: "Jest",
 		src: "https://raw.githubusercontent.com/jpb06/jpb06/master/icons/Jest.svg",
 	},
 	{
-		id: 12,
 		link: "https://git-scm.com/",
 		alt: "Git",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg",
 	},
 	{
-		id: 13,
 		link: "https://www.figma.com/",
 		alt: "Figma",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
 	},
 	{
-		id: 14,
 		link: "https://kernel.org/",
 		alt: "Linux",
 		src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
 	},
 	{
-		id: 15,
 		link: "https://vercel.com/",
 		alt: "Vercel",
 		src: "https://github.com/jpb06/jpb06/raw/master/icons/Vercel-Dark.svg",
 	},
 	{
-		id: 16,
 		link: "https://expressjs.com/",
 		alt: "Express",
 		src: "https://github.com/jpb06/jpb06/raw/master/icons/ExpressJS-Dark.svg",
 	},
 	{
-		id: 17,
 		link: "https://www.mongodb.com/home",
 		alt: "Mongodb",
 		src: "https://github.com/jpb06/jpb06/raw/master/icons/MongoDB.svg",
 	},
 ];
+export const experienceLevels: LanguageExperience[] = [
+	{
+		name: "JavaScript",
+		level: "██████████",
+		time: "2+ years",
+	},
+	{
+		name: "HTML",
+		level: "██████████",
+		time: "2+ years",
+	},
+	{
+		name: "CSS",
+		level: "██████████",
+		time: "2+ years",
+	},
+	{
+		name: "Go",
+		level: "████",
+		time: "less than 1 year",
+	},
+	{
+		name: "Python",
+		level: "██",
+		time: "basic knowledge",
+	},
+];
+
+interface LanguageExperience {
+	name: string;
+	level: string;
+	time: string;
+}

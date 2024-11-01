@@ -1,9 +1,7 @@
-import ApiImage from "../../Files/API.png"
-import loading from "../../Files/loading.gif";
-import { useLocation } from "react-router-dom";
-import { useProjects } from "../../Services/Projects/Hooks/useProjects";
 import { LoadingPage, ProjectsDiv, ProjectsPage, ProjectTitle, StyledHeader,	StyledProject } from "./style";
-import { ProjectComponentType } from "../../Types";
+import { useProjects } from "../../Services/Projects/Hooks/useProjects";
+import { ProjectComponentType } from "@/types";
+import { useLocation } from "react-router-dom";
 
 export default function Projects() {
 	const { pathname } = useLocation();
@@ -19,7 +17,7 @@ export default function Projects() {
 	if (isFetching) {
 		return (
 			<LoadingPage>
-				<img alt="loading" src={loading} />
+				<img alt="loading" src="/files/loading.gif" />
 			</LoadingPage>
 		);
 	}
@@ -47,7 +45,7 @@ export default function Projects() {
 						key={e.id}
 						projectLinks={e.html_url}
 						projectName={e.name}
-						projectImage={ApiImage}
+						projectImage={"/files/api.png"}
 					/>
 				))}
 			</ProjectsDiv>
