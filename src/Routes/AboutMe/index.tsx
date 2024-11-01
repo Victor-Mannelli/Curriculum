@@ -12,7 +12,7 @@ export default function AboutMe() {
 				<Description>
 					<h1> Who am I ? </h1>
 					<p>
-						I am a 25-year-old Full Stack Developer based in Brazil, with a strong interest in
+						I am a 25 years old Full Stack Developer based in Brazil, with a strong interest in
 						technologies that directly impact users, such as web and software development,
 						AI, and virtual reality.
 					</p>
