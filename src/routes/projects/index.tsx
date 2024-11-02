@@ -1,5 +1,5 @@
 import { LoadingPage, ProjectsDiv, ProjectsPage, ProjectTitle, StyledHeader,	StyledProject } from "./style";
-import { useProjects } from "../../Services/Projects/Hooks/useProjects";
+import { useProjects } from "../../services/projects/hooks/useProjects";
 import { ProjectComponentType } from "@/types";
 import { useLocation } from "react-router-dom";
 

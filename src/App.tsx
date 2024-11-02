@@ -3,13 +3,13 @@ import { PopUpMenu, NavigationBar } from "./components";
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { GoUnmute, GoMute } from "@/utils";
-import HomeScreen from "./Routes/HomeScreen";
-import Projects from "./Routes/Projects";
-import Contact from "./Routes/ContactMe";
+import HomeScreen from "./routes/homeScreen";
+import Projects from "./routes/projects";
+import Contact from "./routes/contactMe";
 import GlobalStyle from "./GlobalStyle";
-import AboutMe from "./Routes/AboutMe";
+import AboutMe from "./routes/aboutMe";
 import styled from "styled-components";
-import MyExp from "./Routes/MyExp";
+import MyExp from "./routes/myExp";
 
 export default function App() {
 	const [musicState, setMusicState] = useState(false);

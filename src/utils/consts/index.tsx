@@ -2,7 +2,7 @@ import { SkillsAndExpType, ToolsAndLibsType } from "@/types";
 
 export const skillsAndExp: SkillsAndExpType[] = [
 	{
-		title: "GrupoDupla Holding",
+		title: "Dupla Aposta",
 		date: "2023 - Current",
 		description: "Full Stack Developer, Junior I to Junior III",
 	},

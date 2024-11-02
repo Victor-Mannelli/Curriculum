@@ -1,7 +1,7 @@
-import AboutMe from "../AboutMe";
-import Contact from "../ContactMe";
-import MyExp from "../MyExp";
-import Projects from "../Projects";
+import AboutMe from "../aboutMe";
+import Contact from "../contactMe";
+import MyExp from "../myExp";
+import Projects from "../projects";
 import { HomeScreenPage } from "./style";
 
 export default function HomeScreen() {
