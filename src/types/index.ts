@@ -28,6 +28,7 @@ export type ProjectType = {
 export type ProjectDataType = {
   frontEndProjects: ProjectType[],
   backEndProjects: ProjectType[]
+  pocs: ProjectType[],
 };
 export type PopUpMenuType = {
   popUp: boolean,
