@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const AboutMePage = styled.div`
-	display: grid;
-	grid-template-columns: 55% 45%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 	min-height: 100vh;
+
 	scroll-snap-align: start;
 	padding: 80px 0 20px 0;
 	background-color: #2a2a2a;
@@ -11,14 +14,12 @@ export const AboutMePage = styled.div`
 
 	@media (max-width: 1200px) {
 		padding-top: 70px;
-		grid-template-columns: 100%;
 	}
 	@media (max-width: 1000px) {
 		padding-top: 40px;
-		grid-template-columns: 100%;
+		flex-direction: column;
 	}
 	@media (max-width: 430px) {
-		grid-template-columns: 100%;
 		padding: 0 0 60px 0;
 	}
 `;

@@ -9,7 +9,7 @@ export const ProjectsPage = styled.div<PathNameType>`
 	width: 100%;
 	min-height: 100vh;
 	padding-bottom: 30px;
-	padding-top: ${(props) => (props.pathname === "/projects" ? "70px" : "45px")};
+	padding-top: 70px;
 	background-color: #2a2a2a;
 	scroll-snap-align: start;
 	
