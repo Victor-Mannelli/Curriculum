@@ -1,32 +1,32 @@
 import { SkillsAndExpType, ToolsAndLibsObjectType } from "../types";
 
 export const skillsAndExp: SkillsAndExpType[] = [
-	{
-		title: "Dupla Aposta",
-		date: "2023 - Current",
-		description: "Full Stack Developer, Junior I to Junior III",
-	},
-	{
-		title: "Udemy",
-		date: "2023 - 2024",
-		description: "Go Lang from Zero - Otávio Augusto Gallego",
-	},
-	{
-		title: "Driven",
-		date: "August / 2022 - April / 2023",
-		description:
-			"+25 projects on: HTML, CSS, Javascript, React, Node.js, MongoDB, SQL, Prisma, Jest, Typescript, Docker",
-	},
-	{
-		title: "ECPE",
-		date: "September / 2022",
-		description: `Michigan Language Assessment _________________________ Test Taker ID: 500532674`
-	},
-	{
-		title: "Nanotechnology Degree (Interrupted)",
-		date: "2018 - 2022",
-		description: "Federal University of Rio de Janeiro"
-	}
+  {
+    title: "Dupla Aposta",
+    date: "2023 - Current",
+    description: "Full Stack Developer, Junior I to Junior III",
+  },
+  {
+    title: "Udemy",
+    date: "2023 - 2024",
+    description: "Go Lang from Zero - Otávio Augusto Gallego",
+  },
+  {
+    title: "Driven",
+    date: "August / 2022 - April / 2023",
+    description:
+      "+25 projects on: HTML, CSS, Javascript, React, Node.js, MongoDB, SQL, Prisma, Jest, Typescript, Docker",
+  },
+  {
+    title: "ECPE",
+    date: "September / 2022",
+    description: `Michigan Language Assessment _________________________ Test Taker ID: 500532674`
+  },
+  {
+    title: "Nanotechnology Degree (Interrupted)",
+    date: "2018 - 2022",
+    description: "Federal University of Rio de Janeiro"
+  }
 ];
 export const toolsAndLibraries: ToolsAndLibsObjectType = {
   languages: [
@@ -92,8 +92,8 @@ export const toolsAndLibraries: ToolsAndLibsObjectType = {
     {
       link: "https://tailwindcss.com/",
       alt: "Tailwindcss",
-			src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-			// svg: (
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+      // svg: (
       //   <svg
       //     role="img"
       //     viewBox="0 0 24 24"
@@ -145,35 +145,35 @@ export const toolsAndLibraries: ToolsAndLibsObjectType = {
 };
 
 export const experienceLevels: LanguageExperience[] = [
-	{
-		name: "JavaScript",
-		level: "██████████",
-		time: "2+ years",
-	},
-	{
-		name: "HTML",
-		level: "██████████",
-		time: "2+ years",
-	},
-	{
-		name: "CSS",
-		level: "██████████",
-		time: "2+ years",
-	},
-	{
-		name: "Go",
-		level: "████",
-		time: "less than a year",
-	},
-	{
-		name: "Python",
-		level: "██",
-		time: "basic knowledge",
-	},
+  {
+    name: "HTML",
+    level: "██████████",
+    time: "2+ years",
+  },
+  {
+    name: "CSS",
+    level: "██████████",
+    time: "2+ years",
+  },
+  {
+    name: "JavaScript",
+    level: "██████████",
+    time: "2+ years",
+  },
+  {
+    name: "Go",
+    level: "████",
+    time: "less than a year",
+  },
+  {
+    name: "Python",
+    level: "██",
+    time: "basic knowledge",
+  },
 ];
 
 interface LanguageExperience {
-	name: string;
-	level: string;
-	time: string;
+  name: string;
+  level: string;
+  time: string;
 }

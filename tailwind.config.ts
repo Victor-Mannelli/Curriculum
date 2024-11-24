@@ -73,7 +73,8 @@ const config: Config = {
 			},
 			fontFamily: {
 				alkalami: ['var(--font-alkalami-regular)', 'sans-serif'],
-				roboto: ['var(--font-roboto-regular)', 'sans-serif']
+				roboto: ['var(--font-roboto-regular)', 'sans-serif'],
+				roboto_bold: ['var(--font-roboto-bold)', 'sans-serif']
 			}
   	}
   },

@@ -82,6 +82,9 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  * {
+    @apply list-none;
+  }
 }
 
 @layer base {
@@ -93,7 +96,7 @@ body {
   }
 
   h1 {
-    @apply sm:text-2xl text-xl text-signature font-alkalami;
+    @apply sm:text-2xl text-3xl text-signature font-alkalami pt-2;
   }
   h2 {
     @apply sm:text-xl text-lg text-signature font-alkalami pt-2;

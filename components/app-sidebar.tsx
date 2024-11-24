@@ -1,4 +1,4 @@
-import { FlaskConical, Home, User, FolderGit2, Settings } from "lucide-react"
+import { FlaskConical, Home, User, FolderGit2 } from "lucide-react"
 
 import {
   Sidebar,
@@ -31,11 +31,6 @@ const items = [
     title: "Projects",
     url: "/projects",
     icon: FolderGit2,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
   },
 ]
 
