@@ -1,25 +1,12 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { alkalami, roboto_regular, roboto_bold } from "@/utils/fonts";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { QCProvider } from "@/providers/queryClientProvider";
 import { ThemeProvider } from "@/components/theme-provider"
 import { AppSidebar } from "@/components/app-sidebar"
+import React from "react";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const alkalami = localFont({
-  src: "./public/fonts/Alkalami-Regular.woff",
-  variable: "--font-alkalami-regular",
-  weight: "100 900",
-});
-const roboto_regular = localFont({
-  src: "./public/fonts/Roboto-Regular.woff",
-  variable: "--font-roboto-regular",
-  weight: "400",
-});
-const roboto_bold = localFont({
-  src: "./public/fonts/Roboto-Bold.woff",
-  variable: "--font-roboto-bold",
-  weight: "700",
-});
 
 export const metadata: Metadata = {
   title: "Curriculum",
@@ -31,27 +18,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${alkalami.variable} ${roboto_regular.variable} ${roboto_bold.variable} antialiased`}
       >
-        <SidebarProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <AppSidebar />
-            <main className="flex flex-col w-full">
-              <SidebarTrigger />
-              <div className="flex flex-col items-center justify-center sm:justify-start min-h-[calc(100vh-1.75rem)] w-full sm:mt-16 md:mt-36 px-5 pb-5 pt-1">
-                {children}
-              </div>
-            </main>
-          </ThemeProvider>
-        </SidebarProvider>
+        <QCProvider>
+          <SidebarProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <AppSidebar />
+              <main className="flex flex-col w-full">
+                <SidebarTrigger />
+                <div className="flex flex-col items-center justify-center sm:justify-start min-h-[calc(100vh-1.75rem)] w-full sm:pt-16 md:pt-36 px-5 pb-5 pt-1">
+                  {children}
+                </div>
+              </main>
+            </ThemeProvider>
+          </SidebarProvider>
+          <ReactQueryDevtools />
+        </QCProvider>
       </body>
     </html >
   );

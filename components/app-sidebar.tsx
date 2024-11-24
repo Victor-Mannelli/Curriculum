@@ -1,5 +1,4 @@
 import { FlaskConical, Home, User, FolderGit2 } from "lucide-react"
-
 import {
   Sidebar,
   SidebarContent,

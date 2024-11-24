@@ -23,7 +23,7 @@ export type PathNameType = {
 export type ProjectComponentType = {
   projectLinks: string,
   projectName: string,
-  projectImage: string
+  projectImage: string,
 };
 export type ProjectType = {
   id: number,
