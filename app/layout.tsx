@@ -1,11 +1,12 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarInsetHeader } from "@/components/sidebar-inset-header";
 import { alkalami, roboto_regular, roboto_bold } from "@/utils/fonts";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { QCProvider } from "@/providers/queryClientProvider";
 import { ThemeProvider } from "@/components/theme-provider"
 import { AppSidebar } from "@/components/app-sidebar"
-import React from "react";
 import type { Metadata } from "next";
+import React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,22 +26,22 @@ export default function RootLayout({
         className={`${alkalami.variable} ${roboto_regular.variable} ${roboto_bold.variable} antialiased`}
       >
         <QCProvider>
-          <SidebarProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <SidebarProvider>
               <AppSidebar />
-              <main className="flex flex-col w-full">
-                <SidebarTrigger />
-                <div className="flex flex-col items-center justify-center sm:justify-start min-h-[calc(100vh-1.75rem)] w-full sm:pt-16 md:pt-36 px-5 pb-5 pt-1">
+              <SidebarInset>
+                <SidebarInsetHeader />
+                <main className="w-full min-h-[calc(100vh-9rem)]">
                   {children}
-                </div>
-              </main>
-            </ThemeProvider>
-          </SidebarProvider>
+                </main>
+              </SidebarInset>
+            </SidebarProvider>
+          </ThemeProvider>
           <ReactQueryDevtools />
         </QCProvider>
       </body>

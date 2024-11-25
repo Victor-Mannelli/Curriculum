@@ -1,58 +1,98 @@
-import { FlaskConical, Home, User, FolderGit2 } from "lucide-react"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
+"use client"
 
-const items = [
-  {
-    title: "Home",
-    url: "/",
-    icon: Home,
-  },
-  {
-    title: "About Me",
-    url: "/about-me",
-    icon: User,
-  },
-  {
-    title: "My Experiences",
-    url: "/my-exp",
-    icon: FlaskConical,
-  },
-  {
-    title: "Projects",
-    url: "/projects",
-    icon: FolderGit2,
-  },
-]
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
+import { FlaskConical, FolderGit2, Home, User } from "lucide-react"
+import { IoLogoGithub, IoLogoLinkedin } from "@/libs/react-icons"
+import { NavItems } from "@/components/nav-items"
+import { ModeToggle } from "./toggle-theme"
+import * as React from "react"
+import Image from "next/image";
 
-export function AppSidebar() {
+const data = {
+  user: {
+    name: "Victor Mannelli",
+    email: "imp.mannelli@gmail.com",
+    avatar: "/images/me.png",
+  },
+  pages: [
+    {
+      title: "Home",
+      url: "/",
+      icon: Home,
+    },
+    {
+      title: "About Me",
+      url: "/about-me",
+      icon: User,
+    },
+    {
+      title: "My Experiences",
+      url: "/my-exp",
+      icon: FlaskConical,
+    },
+    {
+      title: "Projects",
+      url: "/projects",
+      icon: FolderGit2,
+      // items: [
+      //   {
+      //     title: "History",
+      //   },
+      //   {
+      //     title: "Starred",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Settings",
+      //     url: "#",
+      //   },
+      // ],
+    },
+  ],
+  socials: [
+    {
+      title: "Linked In",
+      url: "https://www.linkedin.com/in/victor-mendes-mannelli",
+      icon: IoLogoLinkedin,
+      targetBlank: true
+    },
+    {
+      title: "Github",
+      url: "https://github.com/Victor-Mannelli",
+      icon: IoLogoGithub,
+      targetBlank: true
+    },
+  ],
+}
+
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar>
+    <Sidebar variant="inset" {...props}>
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton size="lg" asChild>
+              <a href="#">
+                <Image src={"/images/logo.png"} alt="logo" className="h-fit w-12 rounded-md" width="1920" height="1080" />
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-semibold">Interactive Curriculum</span>
+                  <span className="truncate text-xs"> Victor Mannelli </span>
+                </div>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
       <SidebarContent>
+        <NavItems title="Pages" items={data.pages} />
+        <NavItems title="Socials" items={data.socials} />
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
+          <SidebarGroupLabel> Settings </SidebarGroupLabel>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <ModeToggle />
+            </SidebarMenuItem>
+          </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>

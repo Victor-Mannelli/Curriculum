@@ -9,12 +9,12 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-		extend: {
-			screens: {
-				'3xl': '1800px',
-			},
-			colors: {
-				signature: '#00ffff',
+  	extend: {
+  		screens: {
+  			'3xl': '1800px'
+  		},
+  		colors: {
+  			signature: '#00ffff',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -70,12 +70,12 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-			},
-			fontFamily: {
-				alkalami: ['var(--font-alkalami-regular)', 'sans-serif'],
-				roboto: ['var(--font-roboto-regular)', 'sans-serif'],
-				roboto_bold: ['var(--font-roboto-bold)', 'sans-serif']
-			}
+  		},
+  		fontFamily: {
+  			alkalami: ['var(--font-alkalami-regular)', 'sans-serif'],
+  			roboto: ['var(--font-roboto-regular)', 'sans-serif'],
+  			roboto_bold: ['var(--font-roboto-bold)', 'sans-serif']
+  		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
