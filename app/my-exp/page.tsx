@@ -15,13 +15,12 @@ export default function MyExp() {
       </div>
     );
   }
-
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col justify-center gap-5 my-auto h-full p-5 xl:px-10">
       <h1 className="text-[3rem]"> Skills and Experiences </h1>
       <div className="flex flex-col lg:flex-row justify-center gap-7">
-        <div className="flex flex-col gap-3">
-          <div className="flex sm:flex-row flex-col sm:justify-between gap-3">
+        <div className="flex flex-col justify-between gap-3">
+          <div className="flex sm:flex-row flex-col sm:justify-between gap-3 my-auto">
             <div className="flex flex-col gap-1">
               {experienceLevels.map(({ name, level, time }) => (
                 <li key={name}>
@@ -55,7 +54,7 @@ export default function MyExp() {
           </h2>
         </div>
         <div className="flex justify-center h-fit">
-          <div className="flex flex-wrap gap-3 w-full sm:w-[30.75rem] md:w-[46.5rem] lg:w-[30.75rem] xl:w-[46.5rem]">
+          <div className="flex flex-wrap gap-3 w-full sm:w-[30.75rem] lg:w-[30.75rem] xl:w-[46.5rem]">
             {skillsAndExp.map((e, i) => (
               <WorkPlace
                 key={i}
