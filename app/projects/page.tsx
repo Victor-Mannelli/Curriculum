@@ -1,82 +1,68 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
 import { Project } from "@/components/project";
-import { ProjectType } from "@/utils";
-import { Loader } from "lucide-react"
-import { QueryClient, dehydrate, useQuery } from '@tanstack/react-query'
-import { useProjects } from "@/utils/hooks";
-// import WorkInProgress from "@/app/public/images/workInProgress.jpg"
+import { fetchProjects } from "@/utils/hooks";
+import { Loader } from "lucide-react";
 
 export default function Projects() {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["data"],
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    queryFn: () => useProjects(),
+    queryKey: ["projects"],
+    queryFn: fetchProjects,
   });
-
-  console.log(data)
 
   if (error) {
     return (
-      <div className="flex justify-center items-center h-full sm:pb-16 md:pb-36">
+      <div className="flex justify-center items-center h-full">
         <h1>Error</h1>
       </div>
     );
   }
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-full sm:pb-16 md:pb-36">
+      <div className="flex justify-center items-center h-full">
         <Loader size={60} className="animate-spin" />
       </div>
     );
   }
 
   return (
-    <>
-    </>
-  )
-  // return (
-  //   <div className="flex justify-center items-center w-full min-h-screen">
-  //     <div>
-  //       <div>
-  //         <h1> Some of my Projects </h1>
-  //       </div>
-  //       <h2> FrontEnd </h2>
-  //       <div>
-  //         {projectsData.frontEndProjects.map((e: ProjectType) => (
-  //           <Project
-  //             key={e.id}
-  //             projectLinks={e.html_url}
-  //             projectImage={`https://raw.githubusercontent.com/Victor-Mannelli/${e.name}/main/social.png` || "@/app/public/images/workInProgress.jpg"}
-  //             projectName={""}
-  //           />
-  //         ))}
-  //       </div>
-  //       <h2> BackEnd </h2>
-  //       <div>
-  //         {projectsData.backEndProjects.map((e: ProjectType) => (
-  //           <Project
-  //             key={e.id}
-  //             projectLinks={e.html_url}
-  //             projectName={e.name}
-  //             projectImage={"/files/api.png"}
-  //           />
-  //         ))}
-  //       </div>
-  //       <h2> POC </h2>
-  //       <div>
-  //         {projectsData.pocs.map((e: ProjectType) => (
-  //           <Project
-  //             key={e.id}
-  //             projectLinks={e.html_url}
-  //             projectName={e.name}
-  //             projectImage={"/files/poc.jpeg"}
-  //           />
-  //         ))}
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
+    <div className="flex justify-center items-center h-full snap-start pb-5">
+      <div className="flex flex-col justify-center w-[90%] sm:w-[32.3rem] md:w-[20.6rem] lg:w-[45rem] xl:w-[61rem] 2xl:w-[83.75rem]">
+        <h1 className="text-center font-alkalami pb-4"> FrontEnd </h1>
+        <div className="flex flex-wrap items-center gap-5 h-full">
+          {data?.frontEndProjects.map((e) => (
+            <Project
+              key={e.id}
+              projectLinks={e.html_url}
+              projectImage={`https://raw.githubusercontent.com/Victor-Mannelli/${e.name}/main/social.png`}
+              projectName={""}
+            />
+          ))}
+        </div>
+        <h1 className="text-center font-alkalami pt-10 pb-4"> BackEnd </h1>
+        <div className="flex flex-wrap items-center gap-5 h-full">
+          {data?.backEndProjects.map((e) => (
+            <Project
+              key={e.id}
+              projectLinks={e.html_url}
+              projectName={e.name}
+              projectImage={"/images/api.png"}
+            />
+          ))}
+        </div>
+        <h1 className="text-center font-alkalami pt-10 pb-4"> POC </h1>
+        <div className="flex flex-wrap items-center gap-5 h-full">
+          {data?.pocs.map((e) => (
+            <Project
+              key={e.id}
+              projectLinks={e.html_url}
+              projectName={e.name}
+              projectImage={"/images/poc.jpeg"}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -20,7 +20,7 @@ export const skillsAndExp: SkillsAndExpType[] = [
   {
     title: "ECPE",
     date: "September / 2022",
-    description: `Michigan Language Assessment _________________________ Test Taker ID: 500532674`
+    description: ["Michigan Language Assessment", "hr", "Test Taker ID: 500532674"]
   },
   {
     title: "Nanotechnology Degree (Interrupted)",

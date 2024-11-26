@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export type SkillsAndExpType = {
   title: string,
   date: string,
-  description: string
+  description: string | string[]
 };
 export type ToolsAndLibsObjectType = {
   [key: string]: {
