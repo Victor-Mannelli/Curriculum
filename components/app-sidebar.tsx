@@ -1,7 +1,7 @@
 "use client"
 
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
-import { FlaskConical, FolderGit2, Home, User } from "lucide-react"
+import { FlaskConical, FolderGit2, Home, Mail, User } from "lucide-react"
 import { IoLogoGithub, IoLogoLinkedin } from "@/libs/react-icons"
 import { NavItems } from "@/components/nav-items"
 import { ModeToggle } from "./toggle-theme"
@@ -47,6 +47,11 @@ const data = {
       //     url: "#",
       //   },
       // ],
+    },
+    {
+      title: "Contact Me",
+      url: "/contact-me",
+      icon: Mail,
     },
   ],
   socials: [

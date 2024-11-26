@@ -14,7 +14,7 @@ const config: Config = {
   			'3xl': '1800px'
   		},
   		colors: {
-  			signature: '#00ffff',
+  			signature: 'var(--signature)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -47,6 +47,7 @@ const config: Config = {
   			},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
+  			button: 'hsl(var(--button))',
   			ring: 'hsl(var(--ring))',
   			chart: {
   				'1': 'hsl(var(--chart-1))',

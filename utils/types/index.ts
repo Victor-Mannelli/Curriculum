@@ -39,7 +39,7 @@ export type PopUpMenuType = {
   popUp: boolean,
   setPopUp: React.Dispatch<React.SetStateAction<boolean>>
 };
-export type FormData = {
+export type ContactMeFormDataType = {
   name: string,
   email: string,
   subject: string,
