@@ -2,7 +2,7 @@
 
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
 import { FlaskConical, FolderGit2, Home, Mail, User } from "lucide-react"
-import { IoLogoGithub, IoLogoLinkedin } from "@/libs/react-icons"
+import { IoLogoGithub, IoLogoLinkedin } from "@/lib/react-icons"
 import { NavItems } from "@/components/nav-items"
 import { ModeToggle } from "./toggle-theme"
 import * as React from "react"
@@ -26,7 +26,7 @@ const data = {
       icon: User,
     },
     {
-      title: "My Experiences",
+      title: "Experiences",
       url: "/my-exp",
       icon: FlaskConical,
     },

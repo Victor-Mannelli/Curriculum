@@ -4,12 +4,12 @@ export const skillsAndExp: SkillsAndExpType[] = [
   {
     title: "Dupla Aposta",
     date: "2023 - Current",
-    description: "Full Stack Developer, Junior I to Junior III",
+    description: ["Full Stack Developer", "Junior to Mid Level"],
   },
   {
     title: "Udemy",
-    date: "2023 - 2024",
-    description: "Go Lang from Zero - Otávio Augusto Gallego",
+    date: "2024",
+    description: ["Go Lang from Zero", "by Otávio Augusto Gallego"],
   },
   {
     title: "Driven",
@@ -172,6 +172,12 @@ export const experienceLevels: LanguageExperience[] = [
   },
 ];
 
+export const titleParsers = {
+  "about-me": "About me",
+  "my-exp": "Experience",
+  "projects": "Projects",
+  "contact-exp": "Contact Me",
+}
 interface LanguageExperience {
   name: string;
   level: string;
