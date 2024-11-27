@@ -49,7 +49,7 @@ export function ProfileForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={(e) => onSubmit(e)} className="space-y-3 max-w-3xl mx-auto py-10">
+      <form onSubmit={(e) => onSubmit(e)} className="space-y-3 w-full mx-auto py-10">
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-6">
             <FormField

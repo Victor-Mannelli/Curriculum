@@ -27,7 +27,7 @@ export function NavItems({
   title: string;
   items: {
     title: string;
-    url: string;
+    url: string | null;
     icon: LucideIcon | IconType;
     isActive?: boolean;
     targetBlank?: boolean;
@@ -45,10 +45,17 @@ export function NavItems({
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={item.title}>
-                <a href={item.url} target={item.targetBlank ? "_blank" : undefined}>
-                  <item.icon />
-                  <span>{item.title}</span>
-                </a>
+                {item.url ? (
+                  <a href={item.url} target={item.targetBlank ? "_blank" : undefined}>
+                    <item.icon />
+                    <span>{item.title}</span>
+                  </a>
+                ) : (
+                  <div className="cursor-pointer">
+                    <item.icon />
+                    <span>{item.title}</span>
+                  </div>
+                )}
               </SidebarMenuButton>
               {item.items?.length ? (
                 <>

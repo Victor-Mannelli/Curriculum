@@ -1,7 +1,7 @@
 "use client"
 
 import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
-import { FlaskConical, FolderGit2, Home, Mail, User } from "lucide-react"
+import { FlaskConical, FolderGit2, Home, Mail, Phone, User } from "lucide-react"
 import { IoLogoGithub, IoLogoLinkedin } from "@/lib/react-icons"
 import { NavItems } from "@/components/nav-items"
 import { ModeToggle } from "./toggle-theme"
@@ -66,6 +66,16 @@ const data = {
       url: "https://github.com/Victor-Mannelli",
       icon: IoLogoGithub,
       targetBlank: true
+    },
+    {
+      title: "imp.mannelli@gmail.com",
+      url: null,
+      icon: Mail,
+    },
+    {
+      title: "(21) 9 9779-0964",
+      url: null,
+      icon: Phone,
     },
   ],
 }

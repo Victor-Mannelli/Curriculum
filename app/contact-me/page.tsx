@@ -6,8 +6,8 @@ import React from "react";
 
 export default function ContactMe() {
   return (
-    <div className="flex flex-col 2xl:flex-row items-center justify-center gap-5 h-full px-5">
-      <div className="flex flex-col gap-5">
+    <div className="flex flex-col 2xl:flex-row items-center justify-center gap-24 h-full px-5">
+      <div className="flex flex-col w-[50rem]">
         <div className="flex flex-col gap-3">
           <h1> Contact me </h1>
           <p>
