@@ -17,7 +17,7 @@ export function SidebarInsetHeader() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink onClick={() => router.back()}>
+              <BreadcrumbLink  className="cursor-pointer" onClick={() => router.back()}>
                 Go Back
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -25,7 +25,7 @@ export function SidebarInsetHeader() {
             {pathname.split("/").slice(1).map((title, index) => (
               <div key={"title " + index}>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbPage>
+                  <BreadcrumbPage className="cursor-default">
                     {titlesParser[title]}
                   </BreadcrumbPage>
                 </BreadcrumbItem>
