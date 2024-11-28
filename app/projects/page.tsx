@@ -51,7 +51,7 @@ export default function Projects() {
             />
           ))}
         </div>
-        <h1 className="text-center font-alkalami pt-10 pb-4"> Proofs of Concepts </h1>
+        <h1 className="text-center font-alkalami pt-10 pb-4"> POCs </h1>
         <div className="flex flex-wrap items-center gap-5 h-full">
           {data?.pocs.map((e) => (
             <Project

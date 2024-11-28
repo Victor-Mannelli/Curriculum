@@ -172,11 +172,12 @@ export const experienceLevels: LanguageExperience[] = [
   },
 ];
 
-export const titleParsers = {
+export const titlesParser: { [key: string]: string } = {
+  "": "Home",
   "about-me": "About me",
-  "my-exp": "Experience",
-  "projects": "Projects",
-  "contact-exp": "Contact Me",
+  "my-exp": "My Experiences",
+  "projects": "My Projects",
+  "contact-me": "Contact Me",
 }
 interface LanguageExperience {
   name: string;

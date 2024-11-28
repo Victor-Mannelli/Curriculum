@@ -1,14 +1,17 @@
 "use client";
 
 import { experienceLevels, skillsAndExp, SkillsAndExpType } from "@/utils";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function MyExp() {
+  const pathname = usePathname();
   const router = useRouter();
 
   function WorkPlace({ title, date, description }: SkillsAndExpType) {
     return (
-      <div className="flex flex-col gap-1 w-full sm:w-[13.6rem] h-52 p-3 bg-[#1d1d1d] [&>p]:text-gray-300 rounded-md">
+      <div className={`flex flex-col gap-1 w-full sm:w-[13.6rem] h-52 p-3  [&>p]:text-gray-300 rounded-md 
+        ${pathname === "/" ? "bg-[#292929]" : "bg-[#1d1d1d]"}`
+      }>
         <h1 className="text-xl font-roboto_bold p-0 text-white"> {title} </h1>
         <p> {date} </p>
         {typeof description === "object" ? (
